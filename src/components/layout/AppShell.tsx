@@ -1,0 +1,97 @@
+import {
+  BarChart3,
+  Bell,
+  Building2,
+  Gauge,
+  PiggyBank,
+  PlusCircle,
+  Settings,
+  Shield,
+  WalletCards
+} from 'lucide-react';
+import type { ReactNode } from 'react';
+
+import type { AppMode } from '../../types/finance';
+
+export type PageKey = 'dashboard' | 'movements' | 'banking' | 'savings' | 'analytics' | 'settings';
+
+const nav = [
+  { key: 'dashboard', label: 'Dashboard', icon: Gauge },
+  { key: 'movements', label: 'Movimientos', icon: PlusCircle },
+  { key: 'banking', label: 'Bancos', icon: WalletCards },
+  { key: 'savings', label: 'Ahorros', icon: PiggyBank },
+  { key: 'analytics', label: 'Análisis', icon: BarChart3 },
+  { key: 'settings', label: 'Ajustes', icon: Settings }
+] as const;
+
+type AppShellProps = {
+  page: PageKey;
+  onPageChange: (page: PageKey) => void;
+  mode: AppMode;
+  privacyMode: boolean;
+  onTogglePrivacy: () => void;
+  children: ReactNode;
+};
+
+export const AppShell = ({ page, onPageChange, mode, privacyMode, onTogglePrivacy, children }: AppShellProps) => (
+  <div className="app-shell">
+    <aside className="sidebar">
+      <div className="brand-block">
+        <img src="./icons/logo-horizontal.png" alt="Manéjate" />
+        <span>Finanzas Control Pro</span>
+      </div>
+      <nav>
+        {nav.map((item) => {
+          const Icon = item.icon;
+          return (
+            <button
+              className={page === item.key ? 'active' : ''}
+              key={item.key}
+              onClick={() => onPageChange(item.key)}
+              type="button"
+            >
+              <Icon size={19} />
+              {item.label}
+            </button>
+          );
+        })}
+      </nav>
+    </aside>
+
+    <main className="main-content">
+      <header className="topbar">
+        <div>
+          <p className="eyebrow">Control local sin backend</p>
+          <h1>Finanzas Control Pro</h1>
+        </div>
+        <div className="top-actions">
+          <span className={`mode-pill ${mode}`}>{mode === 'demo' ? 'Modo Demo' : 'Modo Real'}</span>
+          <button className={privacyMode ? 'privacy active' : 'privacy'} onClick={onTogglePrivacy} type="button">
+            <Shield size={17} />
+            Privacidad
+          </button>
+          <Bell size={20} />
+        </div>
+      </header>
+      {children}
+    </main>
+
+    <nav className="bottom-nav">
+      {nav.map((item) => {
+        const Icon = item.icon;
+        return (
+          <button
+            aria-label={item.label}
+            className={page === item.key ? 'active' : ''}
+            key={item.key}
+            onClick={() => onPageChange(item.key)}
+            type="button"
+          >
+            <Icon size={21} />
+            <span>{item.label}</span>
+          </button>
+        );
+      })}
+    </nav>
+  </div>
+);
