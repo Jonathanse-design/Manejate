@@ -1,0 +1,2242 @@
+[
+  {
+    "asset": "logo-horizontal",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 512,
+    "path": "logo-horizontal/full-color-flat/png/manejate-logo-horizontal-full-color-flat-512px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-horizontal/full-color-flat/png/manejate-logo-horizontal-full-color-flat-1024px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-horizontal/full-color-flat/png/manejate-logo-horizontal-full-color-flat-2048px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "full-color-flat",
+    "format": "svg",
+    "size": null,
+    "path": "logo-horizontal/full-color-flat/svg/manejate-logo-horizontal-full-color-flat.svg"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "full-color-flat",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-horizontal/full-color-flat/pdf/manejate-logo-horizontal-full-color-flat.pdf"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 512,
+    "path": "logo-horizontal/full-color-glossy/png/manejate-logo-horizontal-full-color-glossy-512px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-horizontal/full-color-glossy/png/manejate-logo-horizontal-full-color-glossy-1024px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-horizontal/full-color-glossy/png/manejate-logo-horizontal-full-color-glossy-2048px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "full-color-glossy",
+    "format": "svg",
+    "size": null,
+    "path": "logo-horizontal/full-color-glossy/svg/manejate-logo-horizontal-full-color-glossy.svg"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "full-color-glossy",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-horizontal/full-color-glossy/pdf/manejate-logo-horizontal-full-color-glossy.pdf"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 512,
+    "path": "logo-horizontal/light-bg/png/manejate-logo-horizontal-light-bg-512px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-horizontal/light-bg/png/manejate-logo-horizontal-light-bg-1024px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-horizontal/light-bg/png/manejate-logo-horizontal-light-bg-2048px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "light-bg",
+    "format": "svg",
+    "size": null,
+    "path": "logo-horizontal/light-bg/svg/manejate-logo-horizontal-light-bg.svg"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "light-bg",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-horizontal/light-bg/pdf/manejate-logo-horizontal-light-bg.pdf"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 512,
+    "path": "logo-horizontal/dark-bg/png/manejate-logo-horizontal-dark-bg-512px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-horizontal/dark-bg/png/manejate-logo-horizontal-dark-bg-1024px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-horizontal/dark-bg/png/manejate-logo-horizontal-dark-bg-2048px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "dark-bg",
+    "format": "svg",
+    "size": null,
+    "path": "logo-horizontal/dark-bg/svg/manejate-logo-horizontal-dark-bg.svg"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "dark-bg",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-horizontal/dark-bg/pdf/manejate-logo-horizontal-dark-bg.pdf"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 512,
+    "path": "logo-horizontal/mono-dark/png/manejate-logo-horizontal-mono-dark-512px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-horizontal/mono-dark/png/manejate-logo-horizontal-mono-dark-1024px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-horizontal/mono-dark/png/manejate-logo-horizontal-mono-dark-2048px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "mono-dark",
+    "format": "svg",
+    "size": null,
+    "path": "logo-horizontal/mono-dark/svg/manejate-logo-horizontal-mono-dark.svg"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "mono-dark",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-horizontal/mono-dark/pdf/manejate-logo-horizontal-mono-dark.pdf"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 512,
+    "path": "logo-horizontal/mono-white/png/manejate-logo-horizontal-mono-white-512px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-horizontal/mono-white/png/manejate-logo-horizontal-mono-white-1024px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-horizontal/mono-white/png/manejate-logo-horizontal-mono-white-2048px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "mono-white",
+    "format": "svg",
+    "size": null,
+    "path": "logo-horizontal/mono-white/svg/manejate-logo-horizontal-mono-white.svg"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "mono-white",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-horizontal/mono-white/pdf/manejate-logo-horizontal-mono-white.pdf"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 512,
+    "path": "logo-horizontal/grayscale/png/manejate-logo-horizontal-grayscale-512px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-horizontal/grayscale/png/manejate-logo-horizontal-grayscale-1024px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-horizontal/grayscale/png/manejate-logo-horizontal-grayscale-2048px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "grayscale",
+    "format": "svg",
+    "size": null,
+    "path": "logo-horizontal/grayscale/svg/manejate-logo-horizontal-grayscale.svg"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "grayscale",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-horizontal/grayscale/pdf/manejate-logo-horizontal-grayscale.pdf"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 512,
+    "path": "logo-horizontal/small-size-optimized/png/manejate-logo-horizontal-small-size-optimized-512px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-horizontal/small-size-optimized/png/manejate-logo-horizontal-small-size-optimized-1024px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-horizontal/small-size-optimized/png/manejate-logo-horizontal-small-size-optimized-2048px.png"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "small-size-optimized",
+    "format": "svg",
+    "size": null,
+    "path": "logo-horizontal/small-size-optimized/svg/manejate-logo-horizontal-small-size-optimized.svg"
+  },
+  {
+    "asset": "logo-horizontal",
+    "variant": "small-size-optimized",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-horizontal/small-size-optimized/pdf/manejate-logo-horizontal-small-size-optimized.pdf"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 512,
+    "path": "logo-stacked/full-color-flat/png/manejate-logo-stacked-full-color-flat-512px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-stacked/full-color-flat/png/manejate-logo-stacked-full-color-flat-1024px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-stacked/full-color-flat/png/manejate-logo-stacked-full-color-flat-2048px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "full-color-flat",
+    "format": "svg",
+    "size": null,
+    "path": "logo-stacked/full-color-flat/svg/manejate-logo-stacked-full-color-flat.svg"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "full-color-flat",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-stacked/full-color-flat/pdf/manejate-logo-stacked-full-color-flat.pdf"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 512,
+    "path": "logo-stacked/full-color-glossy/png/manejate-logo-stacked-full-color-glossy-512px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-stacked/full-color-glossy/png/manejate-logo-stacked-full-color-glossy-1024px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-stacked/full-color-glossy/png/manejate-logo-stacked-full-color-glossy-2048px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "full-color-glossy",
+    "format": "svg",
+    "size": null,
+    "path": "logo-stacked/full-color-glossy/svg/manejate-logo-stacked-full-color-glossy.svg"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "full-color-glossy",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-stacked/full-color-glossy/pdf/manejate-logo-stacked-full-color-glossy.pdf"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 512,
+    "path": "logo-stacked/light-bg/png/manejate-logo-stacked-light-bg-512px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-stacked/light-bg/png/manejate-logo-stacked-light-bg-1024px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-stacked/light-bg/png/manejate-logo-stacked-light-bg-2048px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "light-bg",
+    "format": "svg",
+    "size": null,
+    "path": "logo-stacked/light-bg/svg/manejate-logo-stacked-light-bg.svg"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "light-bg",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-stacked/light-bg/pdf/manejate-logo-stacked-light-bg.pdf"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 512,
+    "path": "logo-stacked/dark-bg/png/manejate-logo-stacked-dark-bg-512px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-stacked/dark-bg/png/manejate-logo-stacked-dark-bg-1024px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-stacked/dark-bg/png/manejate-logo-stacked-dark-bg-2048px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "dark-bg",
+    "format": "svg",
+    "size": null,
+    "path": "logo-stacked/dark-bg/svg/manejate-logo-stacked-dark-bg.svg"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "dark-bg",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-stacked/dark-bg/pdf/manejate-logo-stacked-dark-bg.pdf"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 512,
+    "path": "logo-stacked/mono-dark/png/manejate-logo-stacked-mono-dark-512px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-stacked/mono-dark/png/manejate-logo-stacked-mono-dark-1024px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-stacked/mono-dark/png/manejate-logo-stacked-mono-dark-2048px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "mono-dark",
+    "format": "svg",
+    "size": null,
+    "path": "logo-stacked/mono-dark/svg/manejate-logo-stacked-mono-dark.svg"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "mono-dark",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-stacked/mono-dark/pdf/manejate-logo-stacked-mono-dark.pdf"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 512,
+    "path": "logo-stacked/mono-white/png/manejate-logo-stacked-mono-white-512px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-stacked/mono-white/png/manejate-logo-stacked-mono-white-1024px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-stacked/mono-white/png/manejate-logo-stacked-mono-white-2048px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "mono-white",
+    "format": "svg",
+    "size": null,
+    "path": "logo-stacked/mono-white/svg/manejate-logo-stacked-mono-white.svg"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "mono-white",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-stacked/mono-white/pdf/manejate-logo-stacked-mono-white.pdf"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 512,
+    "path": "logo-stacked/grayscale/png/manejate-logo-stacked-grayscale-512px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-stacked/grayscale/png/manejate-logo-stacked-grayscale-1024px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-stacked/grayscale/png/manejate-logo-stacked-grayscale-2048px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "grayscale",
+    "format": "svg",
+    "size": null,
+    "path": "logo-stacked/grayscale/svg/manejate-logo-stacked-grayscale.svg"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "grayscale",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-stacked/grayscale/pdf/manejate-logo-stacked-grayscale.pdf"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 512,
+    "path": "logo-stacked/small-size-optimized/png/manejate-logo-stacked-small-size-optimized-512px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 1024,
+    "path": "logo-stacked/small-size-optimized/png/manejate-logo-stacked-small-size-optimized-1024px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 2048,
+    "path": "logo-stacked/small-size-optimized/png/manejate-logo-stacked-small-size-optimized-2048px.png"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "small-size-optimized",
+    "format": "svg",
+    "size": null,
+    "path": "logo-stacked/small-size-optimized/svg/manejate-logo-stacked-small-size-optimized.svg"
+  },
+  {
+    "asset": "logo-stacked",
+    "variant": "small-size-optimized",
+    "format": "pdf",
+    "size": null,
+    "path": "logo-stacked/small-size-optimized/pdf/manejate-logo-stacked-small-size-optimized.pdf"
+  },
+  {
+    "asset": "isotype",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 64,
+    "path": "isotype/full-color-flat/png/manejate-isotype-full-color-flat-64px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 128,
+    "path": "isotype/full-color-flat/png/manejate-isotype-full-color-flat-128px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 256,
+    "path": "isotype/full-color-flat/png/manejate-isotype-full-color-flat-256px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 512,
+    "path": "isotype/full-color-flat/png/manejate-isotype-full-color-flat-512px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 1024,
+    "path": "isotype/full-color-flat/png/manejate-isotype-full-color-flat-1024px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "full-color-flat",
+    "format": "svg",
+    "size": null,
+    "path": "isotype/full-color-flat/svg/manejate-isotype-full-color-flat.svg"
+  },
+  {
+    "asset": "isotype",
+    "variant": "full-color-flat",
+    "format": "pdf",
+    "size": null,
+    "path": "isotype/full-color-flat/pdf/manejate-isotype-full-color-flat.pdf"
+  },
+  {
+    "asset": "isotype",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 64,
+    "path": "isotype/full-color-glossy/png/manejate-isotype-full-color-glossy-64px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 128,
+    "path": "isotype/full-color-glossy/png/manejate-isotype-full-color-glossy-128px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 256,
+    "path": "isotype/full-color-glossy/png/manejate-isotype-full-color-glossy-256px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 512,
+    "path": "isotype/full-color-glossy/png/manejate-isotype-full-color-glossy-512px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 1024,
+    "path": "isotype/full-color-glossy/png/manejate-isotype-full-color-glossy-1024px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "full-color-glossy",
+    "format": "svg",
+    "size": null,
+    "path": "isotype/full-color-glossy/svg/manejate-isotype-full-color-glossy.svg"
+  },
+  {
+    "asset": "isotype",
+    "variant": "full-color-glossy",
+    "format": "pdf",
+    "size": null,
+    "path": "isotype/full-color-glossy/pdf/manejate-isotype-full-color-glossy.pdf"
+  },
+  {
+    "asset": "isotype",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 64,
+    "path": "isotype/light-bg/png/manejate-isotype-light-bg-64px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 128,
+    "path": "isotype/light-bg/png/manejate-isotype-light-bg-128px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 256,
+    "path": "isotype/light-bg/png/manejate-isotype-light-bg-256px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 512,
+    "path": "isotype/light-bg/png/manejate-isotype-light-bg-512px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 1024,
+    "path": "isotype/light-bg/png/manejate-isotype-light-bg-1024px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "light-bg",
+    "format": "svg",
+    "size": null,
+    "path": "isotype/light-bg/svg/manejate-isotype-light-bg.svg"
+  },
+  {
+    "asset": "isotype",
+    "variant": "light-bg",
+    "format": "pdf",
+    "size": null,
+    "path": "isotype/light-bg/pdf/manejate-isotype-light-bg.pdf"
+  },
+  {
+    "asset": "isotype",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 64,
+    "path": "isotype/dark-bg/png/manejate-isotype-dark-bg-64px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 128,
+    "path": "isotype/dark-bg/png/manejate-isotype-dark-bg-128px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 256,
+    "path": "isotype/dark-bg/png/manejate-isotype-dark-bg-256px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 512,
+    "path": "isotype/dark-bg/png/manejate-isotype-dark-bg-512px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 1024,
+    "path": "isotype/dark-bg/png/manejate-isotype-dark-bg-1024px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "dark-bg",
+    "format": "svg",
+    "size": null,
+    "path": "isotype/dark-bg/svg/manejate-isotype-dark-bg.svg"
+  },
+  {
+    "asset": "isotype",
+    "variant": "dark-bg",
+    "format": "pdf",
+    "size": null,
+    "path": "isotype/dark-bg/pdf/manejate-isotype-dark-bg.pdf"
+  },
+  {
+    "asset": "isotype",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 64,
+    "path": "isotype/mono-dark/png/manejate-isotype-mono-dark-64px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 128,
+    "path": "isotype/mono-dark/png/manejate-isotype-mono-dark-128px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 256,
+    "path": "isotype/mono-dark/png/manejate-isotype-mono-dark-256px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 512,
+    "path": "isotype/mono-dark/png/manejate-isotype-mono-dark-512px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 1024,
+    "path": "isotype/mono-dark/png/manejate-isotype-mono-dark-1024px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "mono-dark",
+    "format": "svg",
+    "size": null,
+    "path": "isotype/mono-dark/svg/manejate-isotype-mono-dark.svg"
+  },
+  {
+    "asset": "isotype",
+    "variant": "mono-dark",
+    "format": "pdf",
+    "size": null,
+    "path": "isotype/mono-dark/pdf/manejate-isotype-mono-dark.pdf"
+  },
+  {
+    "asset": "isotype",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 64,
+    "path": "isotype/mono-white/png/manejate-isotype-mono-white-64px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 128,
+    "path": "isotype/mono-white/png/manejate-isotype-mono-white-128px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 256,
+    "path": "isotype/mono-white/png/manejate-isotype-mono-white-256px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 512,
+    "path": "isotype/mono-white/png/manejate-isotype-mono-white-512px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 1024,
+    "path": "isotype/mono-white/png/manejate-isotype-mono-white-1024px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "mono-white",
+    "format": "svg",
+    "size": null,
+    "path": "isotype/mono-white/svg/manejate-isotype-mono-white.svg"
+  },
+  {
+    "asset": "isotype",
+    "variant": "mono-white",
+    "format": "pdf",
+    "size": null,
+    "path": "isotype/mono-white/pdf/manejate-isotype-mono-white.pdf"
+  },
+  {
+    "asset": "isotype",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 64,
+    "path": "isotype/grayscale/png/manejate-isotype-grayscale-64px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 128,
+    "path": "isotype/grayscale/png/manejate-isotype-grayscale-128px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 256,
+    "path": "isotype/grayscale/png/manejate-isotype-grayscale-256px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 512,
+    "path": "isotype/grayscale/png/manejate-isotype-grayscale-512px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 1024,
+    "path": "isotype/grayscale/png/manejate-isotype-grayscale-1024px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "grayscale",
+    "format": "svg",
+    "size": null,
+    "path": "isotype/grayscale/svg/manejate-isotype-grayscale.svg"
+  },
+  {
+    "asset": "isotype",
+    "variant": "grayscale",
+    "format": "pdf",
+    "size": null,
+    "path": "isotype/grayscale/pdf/manejate-isotype-grayscale.pdf"
+  },
+  {
+    "asset": "isotype",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 64,
+    "path": "isotype/small-size-optimized/png/manejate-isotype-small-size-optimized-64px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 128,
+    "path": "isotype/small-size-optimized/png/manejate-isotype-small-size-optimized-128px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 256,
+    "path": "isotype/small-size-optimized/png/manejate-isotype-small-size-optimized-256px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 512,
+    "path": "isotype/small-size-optimized/png/manejate-isotype-small-size-optimized-512px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 1024,
+    "path": "isotype/small-size-optimized/png/manejate-isotype-small-size-optimized-1024px.png"
+  },
+  {
+    "asset": "isotype",
+    "variant": "small-size-optimized",
+    "format": "svg",
+    "size": null,
+    "path": "isotype/small-size-optimized/svg/manejate-isotype-small-size-optimized.svg"
+  },
+  {
+    "asset": "isotype",
+    "variant": "small-size-optimized",
+    "format": "pdf",
+    "size": null,
+    "path": "isotype/small-size-optimized/pdf/manejate-isotype-small-size-optimized.pdf"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 512,
+    "path": "wordmark/full-color-flat/png/manejate-wordmark-full-color-flat-512px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 1024,
+    "path": "wordmark/full-color-flat/png/manejate-wordmark-full-color-flat-1024px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 2048,
+    "path": "wordmark/full-color-flat/png/manejate-wordmark-full-color-flat-2048px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "full-color-flat",
+    "format": "svg",
+    "size": null,
+    "path": "wordmark/full-color-flat/svg/manejate-wordmark-full-color-flat.svg"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "full-color-flat",
+    "format": "pdf",
+    "size": null,
+    "path": "wordmark/full-color-flat/pdf/manejate-wordmark-full-color-flat.pdf"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 512,
+    "path": "wordmark/full-color-glossy/png/manejate-wordmark-full-color-glossy-512px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 1024,
+    "path": "wordmark/full-color-glossy/png/manejate-wordmark-full-color-glossy-1024px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 2048,
+    "path": "wordmark/full-color-glossy/png/manejate-wordmark-full-color-glossy-2048px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "full-color-glossy",
+    "format": "svg",
+    "size": null,
+    "path": "wordmark/full-color-glossy/svg/manejate-wordmark-full-color-glossy.svg"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "full-color-glossy",
+    "format": "pdf",
+    "size": null,
+    "path": "wordmark/full-color-glossy/pdf/manejate-wordmark-full-color-glossy.pdf"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 512,
+    "path": "wordmark/light-bg/png/manejate-wordmark-light-bg-512px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 1024,
+    "path": "wordmark/light-bg/png/manejate-wordmark-light-bg-1024px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 2048,
+    "path": "wordmark/light-bg/png/manejate-wordmark-light-bg-2048px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "light-bg",
+    "format": "svg",
+    "size": null,
+    "path": "wordmark/light-bg/svg/manejate-wordmark-light-bg.svg"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "light-bg",
+    "format": "pdf",
+    "size": null,
+    "path": "wordmark/light-bg/pdf/manejate-wordmark-light-bg.pdf"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 512,
+    "path": "wordmark/dark-bg/png/manejate-wordmark-dark-bg-512px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 1024,
+    "path": "wordmark/dark-bg/png/manejate-wordmark-dark-bg-1024px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 2048,
+    "path": "wordmark/dark-bg/png/manejate-wordmark-dark-bg-2048px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "dark-bg",
+    "format": "svg",
+    "size": null,
+    "path": "wordmark/dark-bg/svg/manejate-wordmark-dark-bg.svg"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "dark-bg",
+    "format": "pdf",
+    "size": null,
+    "path": "wordmark/dark-bg/pdf/manejate-wordmark-dark-bg.pdf"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 512,
+    "path": "wordmark/mono-dark/png/manejate-wordmark-mono-dark-512px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 1024,
+    "path": "wordmark/mono-dark/png/manejate-wordmark-mono-dark-1024px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 2048,
+    "path": "wordmark/mono-dark/png/manejate-wordmark-mono-dark-2048px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "mono-dark",
+    "format": "svg",
+    "size": null,
+    "path": "wordmark/mono-dark/svg/manejate-wordmark-mono-dark.svg"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "mono-dark",
+    "format": "pdf",
+    "size": null,
+    "path": "wordmark/mono-dark/pdf/manejate-wordmark-mono-dark.pdf"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 512,
+    "path": "wordmark/mono-white/png/manejate-wordmark-mono-white-512px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 1024,
+    "path": "wordmark/mono-white/png/manejate-wordmark-mono-white-1024px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 2048,
+    "path": "wordmark/mono-white/png/manejate-wordmark-mono-white-2048px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "mono-white",
+    "format": "svg",
+    "size": null,
+    "path": "wordmark/mono-white/svg/manejate-wordmark-mono-white.svg"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "mono-white",
+    "format": "pdf",
+    "size": null,
+    "path": "wordmark/mono-white/pdf/manejate-wordmark-mono-white.pdf"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 512,
+    "path": "wordmark/grayscale/png/manejate-wordmark-grayscale-512px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 1024,
+    "path": "wordmark/grayscale/png/manejate-wordmark-grayscale-1024px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 2048,
+    "path": "wordmark/grayscale/png/manejate-wordmark-grayscale-2048px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "grayscale",
+    "format": "svg",
+    "size": null,
+    "path": "wordmark/grayscale/svg/manejate-wordmark-grayscale.svg"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "grayscale",
+    "format": "pdf",
+    "size": null,
+    "path": "wordmark/grayscale/pdf/manejate-wordmark-grayscale.pdf"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 512,
+    "path": "wordmark/small-size-optimized/png/manejate-wordmark-small-size-optimized-512px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 1024,
+    "path": "wordmark/small-size-optimized/png/manejate-wordmark-small-size-optimized-1024px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 2048,
+    "path": "wordmark/small-size-optimized/png/manejate-wordmark-small-size-optimized-2048px.png"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "small-size-optimized",
+    "format": "svg",
+    "size": null,
+    "path": "wordmark/small-size-optimized/svg/manejate-wordmark-small-size-optimized.svg"
+  },
+  {
+    "asset": "wordmark",
+    "variant": "small-size-optimized",
+    "format": "pdf",
+    "size": null,
+    "path": "wordmark/small-size-optimized/pdf/manejate-wordmark-small-size-optimized.pdf"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 16,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-16px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 32,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-32px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 48,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-48px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 64,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-64px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 72,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-72px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 96,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-96px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 128,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-128px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 144,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-144px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 152,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-152px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 167,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-167px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 180,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-180px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 192,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-192px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 256,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-256px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 384,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-384px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 512,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-512px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "png",
+    "size": 1024,
+    "path": "app-icon/full-color-flat/png/manejate-app-icon-full-color-flat-1024px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "svg",
+    "size": null,
+    "path": "app-icon/full-color-flat/svg/manejate-app-icon-full-color-flat.svg"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-flat",
+    "format": "pdf",
+    "size": null,
+    "path": "app-icon/full-color-flat/pdf/manejate-app-icon-full-color-flat.pdf"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 16,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-16px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 32,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-32px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 48,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-48px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 64,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-64px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 72,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-72px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 96,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-96px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 128,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-128px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 144,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-144px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 152,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-152px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 167,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-167px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 180,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-180px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 192,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-192px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 256,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-256px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 384,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-384px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 512,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-512px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "png",
+    "size": 1024,
+    "path": "app-icon/full-color-glossy/png/manejate-app-icon-full-color-glossy-1024px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "svg",
+    "size": null,
+    "path": "app-icon/full-color-glossy/svg/manejate-app-icon-full-color-glossy.svg"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "full-color-glossy",
+    "format": "pdf",
+    "size": null,
+    "path": "app-icon/full-color-glossy/pdf/manejate-app-icon-full-color-glossy.pdf"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 16,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-16px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 32,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-32px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 48,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-48px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 64,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-64px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 72,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-72px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 96,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-96px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 128,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-128px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 144,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-144px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 152,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-152px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 167,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-167px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 180,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-180px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 192,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-192px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 256,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-256px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 384,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-384px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 512,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-512px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "png",
+    "size": 1024,
+    "path": "app-icon/light-bg/png/manejate-app-icon-light-bg-1024px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "svg",
+    "size": null,
+    "path": "app-icon/light-bg/svg/manejate-app-icon-light-bg.svg"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "light-bg",
+    "format": "pdf",
+    "size": null,
+    "path": "app-icon/light-bg/pdf/manejate-app-icon-light-bg.pdf"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 16,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-16px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 32,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-32px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 48,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-48px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 64,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-64px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 72,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-72px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 96,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-96px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 128,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-128px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 144,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-144px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 152,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-152px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 167,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-167px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 180,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-180px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 192,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-192px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 256,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-256px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 384,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-384px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 512,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-512px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "png",
+    "size": 1024,
+    "path": "app-icon/dark-bg/png/manejate-app-icon-dark-bg-1024px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "svg",
+    "size": null,
+    "path": "app-icon/dark-bg/svg/manejate-app-icon-dark-bg.svg"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "dark-bg",
+    "format": "pdf",
+    "size": null,
+    "path": "app-icon/dark-bg/pdf/manejate-app-icon-dark-bg.pdf"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 16,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-16px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 32,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-32px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 48,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-48px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 64,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-64px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 72,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-72px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 96,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-96px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 128,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-128px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 144,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-144px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 152,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-152px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 167,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-167px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 180,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-180px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 192,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-192px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 256,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-256px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 384,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-384px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 512,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-512px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "png",
+    "size": 1024,
+    "path": "app-icon/mono-dark/png/manejate-app-icon-mono-dark-1024px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "svg",
+    "size": null,
+    "path": "app-icon/mono-dark/svg/manejate-app-icon-mono-dark.svg"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-dark",
+    "format": "pdf",
+    "size": null,
+    "path": "app-icon/mono-dark/pdf/manejate-app-icon-mono-dark.pdf"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 16,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-16px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 32,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-32px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 48,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-48px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 64,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-64px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 72,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-72px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 96,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-96px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 128,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-128px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 144,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-144px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 152,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-152px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 167,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-167px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 180,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-180px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 192,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-192px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 256,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-256px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 384,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-384px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 512,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-512px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "png",
+    "size": 1024,
+    "path": "app-icon/mono-white/png/manejate-app-icon-mono-white-1024px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "svg",
+    "size": null,
+    "path": "app-icon/mono-white/svg/manejate-app-icon-mono-white.svg"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "mono-white",
+    "format": "pdf",
+    "size": null,
+    "path": "app-icon/mono-white/pdf/manejate-app-icon-mono-white.pdf"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 16,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-16px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 32,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-32px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 48,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-48px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 64,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-64px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 72,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-72px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 96,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-96px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 128,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-128px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 144,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-144px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 152,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-152px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 167,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-167px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 180,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-180px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 192,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-192px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 256,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-256px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 384,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-384px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 512,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-512px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "png",
+    "size": 1024,
+    "path": "app-icon/grayscale/png/manejate-app-icon-grayscale-1024px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "svg",
+    "size": null,
+    "path": "app-icon/grayscale/svg/manejate-app-icon-grayscale.svg"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "grayscale",
+    "format": "pdf",
+    "size": null,
+    "path": "app-icon/grayscale/pdf/manejate-app-icon-grayscale.pdf"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 16,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-16px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 32,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-32px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 48,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-48px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 64,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-64px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 72,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-72px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 96,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-96px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 128,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-128px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 144,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-144px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 152,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-152px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 167,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-167px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 180,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-180px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 192,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-192px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 256,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-256px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 384,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-384px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 512,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-512px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "png",
+    "size": 1024,
+    "path": "app-icon/small-size-optimized/png/manejate-app-icon-small-size-optimized-1024px.png"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "svg",
+    "size": null,
+    "path": "app-icon/small-size-optimized/svg/manejate-app-icon-small-size-optimized.svg"
+  },
+  {
+    "asset": "app-icon",
+    "variant": "small-size-optimized",
+    "format": "pdf",
+    "size": null,
+    "path": "app-icon/small-size-optimized/pdf/manejate-app-icon-small-size-optimized.pdf"
+  }
+]
