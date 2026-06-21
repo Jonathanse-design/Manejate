@@ -94,7 +94,6 @@ export const Dashboard = ({
             income={totals.income}
             privacyMode={privacy}
           />
-          <QuickActions onNavigate={onNavigate} />
           <DashboardKpis
             currency={currency}
             expenses={totals.expenses}
@@ -138,6 +137,7 @@ export const Dashboard = ({
               </p>
             </article>
           </section>
+          <QuickActions onNavigate={onNavigate} />
         </>
       )}
     </div>
