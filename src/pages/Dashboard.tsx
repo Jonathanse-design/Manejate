@@ -22,6 +22,14 @@ import {
 import { buildAlerts } from '../utils/alerts';
 import { currentMonthPeriod } from '../utils/dates';
 
+const previousMonthPeriod = () => {
+  const previous = subMonths(new Date(), 1);
+  return {
+    from: new Date(previous.getFullYear(), previous.getMonth(), 1),
+    to: new Date(previous.getFullYear(), previous.getMonth() + 1, 0, 23, 59, 59)
+  };
+};
+
 export const Dashboard = ({
   data,
   onNavigate
@@ -32,6 +40,7 @@ export const Dashboard = ({
   const { togglePrivacy, resetDemo, switchMode, hideSetupProgress } = useFinance();
   const active = activeData(data);
   const totals = totalsForPeriod(active.transactions, currentMonthPeriod());
+  const previousTotals = totalsForPeriod(active.transactions, previousMonthPeriod());
   const alerts = buildAlerts(data);
   const categories = groupExpensesByCategory(active.transactions);
   const payments = upcomingPayments(active.products);
@@ -73,6 +82,7 @@ export const Dashboard = ({
         health={health}
         mode={active.mode}
         onTogglePrivacy={togglePrivacy}
+        onOpenSettings={() => onNavigate('settings')}
         privacyMode={privacy}
         userName={data.settings.userName}
       />
@@ -106,6 +116,7 @@ export const Dashboard = ({
             expenses={totals.expenses}
             health={health}
             income={totals.income}
+            monthlyChange={previousTotals.balance ? ((totals.balance - previousTotals.balance) / Math.abs(previousTotals.balance)) * 100 : 0}
             privacyMode={privacy}
             savings={totalSavings + active.emergencyFund.currentAmount}
           />
@@ -179,3 +190,4 @@ export const Dashboard = ({
     </div>
   );
 };
+import { subMonths } from 'date-fns';

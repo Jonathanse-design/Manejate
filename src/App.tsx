@@ -5,6 +5,7 @@ import { Onboarding } from './components/layout/Onboarding';
 import { useFinance } from './store/financeStore';
 import { Analytics } from './pages/Analytics';
 import { Banking } from './pages/Banking';
+import { Budget } from './pages/Budget';
 import { Dashboard } from './pages/Dashboard';
 import { Movements } from './pages/Movements';
 import { Savings } from './pages/Savings';
@@ -17,6 +18,7 @@ const renderPage = (
 ) => {
   if (page === 'movements') return <Movements />;
   if (page === 'banking') return <Banking />;
+  if (page === 'budget') return <Budget />;
   if (page === 'savings') return <Savings />;
   if (page === 'analytics') return <Analytics data={data} />;
   if (page === 'settings') return <Settings />;

@@ -7,6 +7,26 @@ import { activeData, cardUsage, creditCards, loanInstallments, loans } from '../
 import { humanDate } from '../utils/dates';
 import { formatMoney, formatPercent } from '../utils/formatters';
 
+const productLabels: Record<string, string> = {
+  'credit-card': 'Tarjeta',
+  loan: 'Préstamo',
+  'bank-account': 'Cuenta',
+  'informal-debt': 'Deuda informal',
+  financing: 'Financiamiento',
+  'recurring-service': 'Servicio recurrente',
+  savings: 'Ahorro',
+  investment: 'Inversión',
+  other: 'Otro'
+};
+
+const statusLabels: Record<string, string> = {
+  current: 'Al día',
+  'due-soon': 'Próximo',
+  overdue: 'Vencido',
+  delinquent: 'En mora',
+  paid: 'Pagado'
+};
+
 export const Banking = () => {
   const { data, addProduct, deleteProduct, addCardConsumption, deleteCardConsumption } = useFinance();
   if (!data) return null;
@@ -24,18 +44,27 @@ export const Banking = () => {
         <div className="card-grid">
           {active.products.map((product) => {
             const usage = product.type === 'credit-card' ? cardUsage([product], active.cardConsumptions)[0] : null;
-            const installments = product.type === 'loan' ? loanInstallments(product) : null;
+            const installments = ['loan', 'financing'].includes(product.type) ? loanInstallments(product) : null;
+            const progress =
+              product.type === 'credit-card' && product.creditLimit
+                ? ((product.balance || usage?.consumed || 0) / product.creditLimit) * 100
+                : product.originalAmount
+                  ? ((product.originalAmount - product.balance) / product.originalAmount) * 100
+                  : 0;
             return (
               <article className={`bank-card ${product.type}`} key={product.id} style={{ borderColor: product.color }}>
                 <div className="card-heading-row">
                   <div>
-                    <span>{product.type === 'credit-card' ? 'Tarjeta' : product.type === 'loan' ? 'Préstamo' : 'Cuenta'}</span>
+                    <span>{productLabels[product.type] || 'Producto'}</span>
                     <h3>{product.name}</h3>
                     <p>{product.bank}</p>
                   </div>
-                  <button className="icon-button" onClick={() => deleteProduct(product.id)} type="button"><Trash2 size={17} /></button>
+                  <span className={`status-pill ${product.status || 'current'}`}>{statusLabels[product.status || 'current']}</span>
                 </div>
                 <strong>{formatMoney(product.balance, currency, data.settings.privacyMode)}</strong>
+                <div className="progress-row">
+                  <div><i style={{ width: `${Math.max(0, Math.min(progress, 100))}%` }} /></div>
+                </div>
                 {usage && (
                   <div className="product-detail-grid">
                     <span>Límite <b>{formatMoney(product.creditLimit || 0, currency, data.settings.privacyMode)}</b></span>
@@ -54,6 +83,12 @@ export const Banking = () => {
                     <span>Próximo pago <b>{product.nextPaymentDate ? humanDate(product.nextPaymentDate) : 'Pendiente'}</b></span>
                   </div>
                 )}
+                {product.notes && <p className="product-note">{product.notes}</p>}
+                <div className="card-actions">
+                  <button className="secondary-btn" type="button">Registrar pago</button>
+                  <button className="ghost-btn" type="button">Ver detalle</button>
+                  <button className="icon-button" onClick={() => deleteProduct(product.id)} type="button" aria-label="Eliminar producto"><Trash2 size={17} /></button>
+                </div>
               </article>
             );
           })}

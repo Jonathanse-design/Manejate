@@ -1,4 +1,4 @@
-import { Eye, EyeOff } from 'lucide-react';
+import { Eye, EyeOff, Settings } from 'lucide-react';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 
@@ -15,38 +15,46 @@ export const DashboardHeader = ({
   mode,
   health,
   privacyMode,
-  onTogglePrivacy
+  onTogglePrivacy,
+  onOpenSettings
 }: {
   userName?: string;
   mode: AppMode;
   health: FinancialHealth;
   privacyMode: boolean;
   onTogglePrivacy: () => void;
+  onOpenSettings: () => void;
 }) => (
   <header className="dashboard-header">
     <div className="dashboard-brand-row">
-      <img className="brand-logo" src="./assets/logo-manejate-dark.svg" alt="Manéjate" />
+      <img className="brand-logo" src="./assets/logo-manejate-light.svg" alt="Manéjate" />
       <span className={`mode-pill ${mode}`}>{mode === 'demo' ? 'Modo Demo' : 'Modo Real'}</span>
     </div>
     <div className="dashboard-welcome">
       <div>
-        <p className="eyebrow">{format(new Date(), 'MMMM yyyy', { locale: es })}</p>
+        <p className="eyebrow">{format(new Date(), "d 'de' MMMM, yyyy", { locale: es })}</p>
         <h1>Hola{userName ? `, ${userName}` : ''}</h1>
-        <p>Así va tu dinero este mes.</p>
+        <p>Tu dinero, bajo control.</p>
       </div>
       <div className={`financial-status ${health}`}>
         <span>Estado: {health === 'healthy' ? 'Saludable' : health === 'tight' ? 'Ajustado' : 'Crítico'}</span>
         <p>{statusCopy[health]}</p>
       </div>
     </div>
-    <button
-      aria-label={privacyMode ? 'Mostrar montos' : 'Ocultar montos'}
-      className="privacy dashboard-privacy"
-      onClick={onTogglePrivacy}
-      type="button"
-    >
-      {privacyMode ? <Eye size={17} /> : <EyeOff size={17} />}
-      {privacyMode ? 'Mostrar montos' : 'Ocultar montos'}
-    </button>
+    <div className="dashboard-profile">
+      <button
+        aria-label={privacyMode ? 'Mostrar montos' : 'Ocultar montos'}
+        className="privacy dashboard-privacy"
+        onClick={onTogglePrivacy}
+        type="button"
+      >
+        {privacyMode ? <Eye size={17} /> : <EyeOff size={17} />}
+        {privacyMode ? 'Mostrar' : 'Ocultar'}
+      </button>
+      <button aria-label="Abrir ajustes" className="profile-button" onClick={onOpenSettings} type="button">
+        <span>{userName?.charAt(0).toUpperCase() || 'M'}</span>
+        <Settings size={17} />
+      </button>
+    </div>
   </header>
 );

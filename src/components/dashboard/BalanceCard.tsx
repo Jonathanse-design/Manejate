@@ -12,6 +12,7 @@ export const BalanceCard = ({
   income,
   expenses,
   savings,
+  monthlyChange,
   currency,
   privacyMode,
   health
@@ -20,6 +21,7 @@ export const BalanceCard = ({
   income: number;
   expenses: number;
   savings: number;
+  monthlyChange: number;
   currency: string;
   privacyMode: boolean;
   health: FinancialHealth;
@@ -35,7 +37,9 @@ export const BalanceCard = ({
       <div className="balance-details">
         <span>Ingresos <b>{formatMoney(income, currency, privacyMode)}</b></span>
         <span>Gastos <b>{formatMoney(expenses, currency, privacyMode)}</b></span>
-        <span>Ahorro <b>{formatMoney(savings, currency, privacyMode)}</b></span>
+        <span>Resultado neto <b>{formatMoney(balance, currency, privacyMode)}</b></span>
+        <span>Vs. mes anterior <b className={monthlyChange >= 0 ? 'positive' : 'negative'}>{monthlyChange >= 0 ? '+' : ''}{formatPercent(monthlyChange)}</b></span>
+        <span>Ahorros y metas <b>{formatMoney(savings, currency, privacyMode)}</b></span>
         <span>Has usado <b>{formatPercent(spentPercent)}</b> de tus ingresos.</span>
       </div>
       <div className="balance-advice">

@@ -4,6 +4,7 @@ import {
   Gauge,
   PiggyBank,
   PlusCircle,
+  ReceiptText,
   Settings,
   Shield,
   WalletCards
@@ -12,14 +13,15 @@ import type { ReactNode } from 'react';
 
 import type { AppMode } from '../../types/finance';
 
-export type PageKey = 'dashboard' | 'movements' | 'banking' | 'savings' | 'analytics' | 'settings';
+export type PageKey = 'dashboard' | 'movements' | 'banking' | 'budget' | 'savings' | 'analytics' | 'settings';
 
 const nav = [
-  { key: 'dashboard', label: 'Dashboard', icon: Gauge },
+  { key: 'dashboard', label: 'Inicio', icon: Gauge },
   { key: 'movements', label: 'Movimientos', icon: PlusCircle },
-  { key: 'banking', label: 'Bancos', icon: WalletCards },
-  { key: 'savings', label: 'Ahorros', icon: PiggyBank },
-  { key: 'analytics', label: 'Análisis', icon: BarChart3 },
+  { key: 'banking', label: 'Productos', icon: WalletCards },
+  { key: 'budget', label: 'Presupuesto', icon: ReceiptText },
+  { key: 'savings', label: 'Metas', icon: PiggyBank },
+  { key: 'analytics', label: 'Insights', icon: BarChart3 },
   { key: 'settings', label: 'Ajustes', icon: Settings }
 ] as const;
 
@@ -36,7 +38,7 @@ export const AppShell = ({ page, onPageChange, mode, privacyMode, onTogglePrivac
   <div className="app-shell">
     <aside className="sidebar">
       <div className="brand-block">
-        <img className="brand-logo" src="./assets/logo-manejate-dark.svg" alt="Manéjate" />
+        <img className="brand-logo" src="./assets/logo-manejate-light.svg" alt="Manéjate" />
         <span>Finanzas personales</span>
       </div>
       <nav>

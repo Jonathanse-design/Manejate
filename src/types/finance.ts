@@ -1,7 +1,18 @@
 export type AppMode = 'demo' | 'real';
 export type TransactionKind = 'income' | 'expense';
+export type TransactionStatus = 'completed' | 'pending' | 'scheduled';
 export type ExpenseType = 'fixed' | 'variable' | 'extraordinary';
-export type ProductType = 'credit-card' | 'loan' | 'bank-account' | 'other';
+export type ProductType =
+  | 'credit-card'
+  | 'loan'
+  | 'bank-account'
+  | 'informal-debt'
+  | 'financing'
+  | 'recurring-service'
+  | 'savings'
+  | 'investment'
+  | 'other';
+export type ProductStatus = 'current' | 'due-soon' | 'overdue' | 'delinquent' | 'paid';
 export type AlertLevel = 'info' | 'warning' | 'critical' | 'success';
 export type FinancialHealth = 'healthy' | 'tight' | 'critical';
 
@@ -19,6 +30,7 @@ export interface Transaction extends BaseEntity {
   category: string;
   description: string;
   method: string;
+  status?: TransactionStatus;
   note?: string;
   recurring: boolean;
   expenseType?: ExpenseType;
@@ -32,6 +44,7 @@ export interface BankProduct extends BaseEntity {
   balance: number;
   currency: string;
   color: string;
+  status?: ProductStatus;
   notes?: string;
   creditLimit?: number;
   cutDay?: number;

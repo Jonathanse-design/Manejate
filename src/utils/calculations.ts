@@ -82,7 +82,7 @@ export const monthlyTrend = (transactions: Transaction[]) => {
 };
 
 export const creditCards = (products: BankProduct[]) => products.filter((item) => item.type === 'credit-card');
-export const loans = (products: BankProduct[]) => products.filter((item) => item.type === 'loan');
+export const loans = (products: BankProduct[]) => products.filter((item) => ['loan', 'financing', 'informal-debt'].includes(item.type));
 
 export const cardUsage = (products: BankProduct[], cardConsumptions: AppData['cardConsumptions']) =>
   creditCards(products).map((card) => {
@@ -113,11 +113,11 @@ export const upcomingPayments = (products: BankProduct[]) =>
           date: product.paymentDueDate || nextDateFromDay(product.paymentDueDay)
         }];
       }
-      if (product.type === 'loan') {
+      if (['loan', 'financing', 'informal-debt', 'recurring-service'].includes(product.type)) {
         return [{
           id: product.id,
           title: product.name,
-          type: 'Préstamo',
+          type: product.type === 'recurring-service' ? 'Servicio' : 'Deuda',
           amount: product.monthlyPayment || 0,
           date: product.nextPaymentDate || nextDateFromDay(product.paymentDay)
         }];

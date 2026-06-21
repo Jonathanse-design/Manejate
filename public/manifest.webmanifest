@@ -6,8 +6,8 @@
   "scope": "/Manejate/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#F7F4EF",
-  "theme_color": "#F7F4EF",
+  "background_color": "#050B1E",
+  "theme_color": "#050B1E",
   "icons": [
     { "src": "/Manejate/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
     { "src": "/Manejate/icons/icon-256.png", "sizes": "256x256", "type": "image/png", "purpose": "any" },

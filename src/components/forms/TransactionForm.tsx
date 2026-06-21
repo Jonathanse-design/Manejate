@@ -51,6 +51,7 @@ export const TransactionForm = ({
       description: description || category,
       date: toDateKey(new Date()),
       method: methods[0],
+      status: 'completed',
       recurring: expenseType === 'fixed',
       expenseType: kind === 'expense' ? expenseType : undefined,
       createdAt: stamp,
