@@ -27,17 +27,17 @@ export const downloadTextFile = (filename: string, content: string, type = 'appl
 
 export const backupFilename = () => {
   const date = new Date().toISOString().slice(0, 10);
-  return `finanzas-control-pro-backup-${date}.json`;
+  return `manejate-backup-${date}.json`;
 };
 
 export const exportFullBackup = (data: AppData) =>
   downloadTextFile(backupFilename(), JSON.stringify(data, null, 2));
 
 export const exportTransactionsCsv = (data: AppData) =>
-  downloadTextFile('finanzas-control-pro-movimientos.csv', toCsv(data.transactions), 'text/csv;charset=utf-8');
+  downloadTextFile('manejate-movimientos.csv', toCsv(data.transactions), 'text/csv;charset=utf-8');
 
 export const exportCardConsumptionsCsv = (data: AppData) =>
-  downloadTextFile('finanzas-control-pro-consumos-tarjetas.csv', toCsv(data.cardConsumptions), 'text/csv;charset=utf-8');
+  downloadTextFile('manejate-consumos-tarjetas.csv', toCsv(data.cardConsumptions), 'text/csv;charset=utf-8');
 
 export const exportProductsCsv = (data: AppData) =>
-  downloadTextFile('finanzas-control-pro-productos-bancarios.csv', toCsv(data.products), 'text/csv;charset=utf-8');
+  downloadTextFile('manejate-productos-bancarios.csv', toCsv(data.products), 'text/csv;charset=utf-8');

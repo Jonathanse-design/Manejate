@@ -1,10 +1,10 @@
-# Finanzas Control Pro
+# Manéjate
 
-PWA estática para controlar finanzas personales: ingresos, gastos, tarjetas, préstamos, ahorros, fondo de emergencia, alertas, análisis visual y respaldos manuales.
+PWA estática para finanzas personales: ingresos, gastos, productos bancarios, tarjetas, préstamos, ahorros, fondo de emergencia, alertas y análisis visual.
 
 ## Importante sobre datos
 
-Esta app está pensada para GitHub Pages y no usa backend ni base de datos en la nube. Los datos se guardan localmente en el navegador mediante IndexedDB.
+Manéjate funciona en GitHub Pages sin backend. Tus datos se guardan localmente en el navegador mediante IndexedDB.
 
 Si limpias los datos de Safari/Chrome, cambias de dispositivo o reinstalas el navegador, puedes perder la información. Exporta un backup JSON semanalmente desde **Ajustes > Respaldo y seguridad de datos**.
 
@@ -12,10 +12,9 @@ Si limpias los datos de Safari/Chrome, cambias de dispositivo o reinstalas el na
 
 - PWA instalable desde Safari en iPhone.
 - Modo Demo y Modo Real separados.
-- Modo privacidad para ocultar montos reales.
-- Dashboard con KPIs, alertas y próximos pagos.
-- CRUD de ingresos y gastos.
-- Registro de productos bancarios, tarjetas, préstamos y consumos de tarjetas.
+- Modo privacidad para ocultar montos.
+- Dashboard con balance mensual, KPIs, alertas, próximos pagos, tarjetas y ahorro.
+- Registro de ingresos, gastos, productos bancarios, préstamos y consumos de tarjetas.
 - Metas de ahorro y fondo de emergencia separado.
 - Análisis con gráficos e insights automáticos.
 - Exportación/importación JSON.
@@ -26,76 +25,72 @@ Si limpias los datos de Safari/Chrome, cambias de dispositivo o reinstalas el na
 ## Instalar dependencias
 
 ```bash
-npm install
+pnpm install
 ```
 
-También puedes usar pnpm:
+También puedes usar npm:
 
 ```bash
-pnpm install
+npm install
 ```
 
 ## Correr localmente
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
-Con pnpm:
+Con npm:
 
 ```bash
-pnpm run dev
+npm run dev
 ```
 
 ## Crear build
 
 ```bash
-npm run build
+pnpm run build
 ```
 
-Con pnpm:
+Con npm:
 
 ```bash
-pnpm run build
+npm run build
 ```
 
 ## Previsualizar build
 
 ```bash
-npm run preview
+pnpm run preview
 ```
 
-## Subir a GitHub
+## Despliegue en GitHub Pages
 
-```bash
-git init
-git add .
-git commit -m "Crear PWA Finanzas Control Pro"
-git branch -M main
-git remote add origin https://github.com/usuario/nombre-del-repositorio.git
-git push -u origin main
-```
-
-## Activar GitHub Pages
-
-1. Abre el repositorio en GitHub.
-2. Ve a **Settings > Pages**.
-3. En **Build and deployment**, elige **GitHub Actions**.
-4. Haz push a `main`.
-5. Espera que termine el workflow `Deploy to GitHub Pages`.
-
-La app está configurada con `base: './'`, así que funciona en rutas tipo:
+El proyecto está configurado para publicarse bajo:
 
 ```text
-https://usuario.github.io/nombre-del-repositorio/
+https://jonathanse-design.github.io/Manejate/
 ```
+
+La configuración importante es:
+
+- `vite.config.ts` usa `base: "/Manejate/"`.
+- `public/manifest.webmanifest` usa `start_url` y `scope` con `/Manejate/`.
+- `.github/workflows/deploy.yml` compila y publica `dist/`.
+
+Para desplegar nuevamente:
+
+1. Haz commit de los cambios.
+2. Haz push a `main`.
+3. GitHub Actions ejecutará **Deploy to GitHub Pages**.
+4. Cuando el workflow esté verde, abre la URL publicada.
 
 ## Instalar en iPhone desde Safari
 
 1. Abre el enlace publicado en Safari.
 2. Toca el botón de compartir.
 3. Elige **Agregar a pantalla de inicio**.
-4. Confirma el nombre **Finanzas Pro**.
+4. Confirma el nombre **Manéjate**.
 5. Abre la app desde el icono instalado.
 
 ## Backup recomendado
@@ -105,24 +100,14 @@ https://usuario.github.io/nombre-del-repositorio/
 - Exporta un backup antes de borrar datos reales.
 - Guarda una copia fuera del teléfono si los datos son importantes.
 
-## Estructura
+## Marca
+
+Los assets de marca viven en:
 
 ```text
-src/
-  components/
-  data/
-  db/
-  pages/
-  store/
-  styles/
-  types/
-  utils/
-public/
-  icons/
-  manifest.webmanifest
-  sw.js
+public/assets/
+public/icons/
+brand-assets/
 ```
 
-## Personalización
-
-Los iconos PWA fueron tomados del paquete `brand-assets` generado desde el logo aprobado de Manéjate. Puedes reemplazarlos en `public/icons/` manteniendo los mismos nombres.
+El logo principal se deriva del logo aprobado de Manéjate y cuenta con variantes para fondo oscuro, fondo claro, favicon e iconos PWA.

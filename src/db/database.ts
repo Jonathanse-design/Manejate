@@ -12,7 +12,7 @@ class FinanceDatabase extends Dexie {
   appData!: Table<AppRecord, string>;
 
   constructor() {
-    super('finanzas-control-pro');
+    super(['manejate', 'finanzas'].join('-'));
     this.version(1).stores({
       appData: 'id'
     });

@@ -5,7 +5,7 @@ import type { AppMode } from '../../types/finance';
 export const Onboarding = ({ onStart }: { onStart: (mode: AppMode) => void }) => (
   <section className="onboarding">
     <div className="onboarding-card">
-      <img src="./icons/logo-horizontal.png" alt="Manéjate" />
+      <img src="./assets/logo-manejate-dark.svg" alt="Manéjate" />
       <p className="eyebrow">Primera configuración</p>
       <h1>Controla tu dinero sin exponer tus datos.</h1>
       <p>

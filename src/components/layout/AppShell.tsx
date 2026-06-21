@@ -1,7 +1,6 @@
 import {
   BarChart3,
   Bell,
-  Building2,
   Gauge,
   PiggyBank,
   PlusCircle,
@@ -37,8 +36,8 @@ export const AppShell = ({ page, onPageChange, mode, privacyMode, onTogglePrivac
   <div className="app-shell">
     <aside className="sidebar">
       <div className="brand-block">
-        <img src="./icons/logo-horizontal.png" alt="Manéjate" />
-        <span>Finanzas Control Pro</span>
+        <img src="./assets/logo-manejate-dark.svg" alt="Manéjate" />
+        <span>Finanzas personales</span>
       </div>
       <nav>
         {nav.map((item) => {
@@ -59,20 +58,27 @@ export const AppShell = ({ page, onPageChange, mode, privacyMode, onTogglePrivac
     </aside>
 
     <main className="main-content">
-      <header className="topbar">
-        <div>
-          <p className="eyebrow">Control local sin backend</p>
-          <h1>Finanzas Control Pro</h1>
-        </div>
-        <div className="top-actions">
-          <span className={`mode-pill ${mode}`}>{mode === 'demo' ? 'Modo Demo' : 'Modo Real'}</span>
-          <button className={privacyMode ? 'privacy active' : 'privacy'} onClick={onTogglePrivacy} type="button">
-            <Shield size={17} />
-            Privacidad
-          </button>
-          <Bell size={20} />
-        </div>
-      </header>
+      {page !== 'dashboard' && (
+        <header className="topbar">
+          <div>
+            <p className="eyebrow">Manéjate</p>
+            <h1>{nav.find((item) => item.key === page)?.label}</h1>
+          </div>
+          <div className="top-actions">
+            <span className={`mode-pill ${mode}`}>{mode === 'demo' ? 'Modo Demo' : 'Modo Real'}</span>
+            <button
+              aria-label={privacyMode ? 'Mostrar montos' : 'Ocultar montos'}
+              className={privacyMode ? 'privacy active' : 'privacy'}
+              onClick={onTogglePrivacy}
+              type="button"
+            >
+              <Shield size={17} />
+              {privacyMode ? 'Mostrar montos' : 'Ocultar montos'}
+            </button>
+            <Bell aria-label="Alertas" size={20} />
+          </div>
+        </header>
+      )}
       {children}
     </main>
 

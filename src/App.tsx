@@ -10,20 +10,24 @@ import { Movements } from './pages/Movements';
 import { Savings } from './pages/Savings';
 import { Settings } from './pages/Settings';
 
-const renderPage = (page: PageKey, data: NonNullable<ReturnType<typeof useFinance>['data']>) => {
+const renderPage = (
+  page: PageKey,
+  data: NonNullable<ReturnType<typeof useFinance>['data']>,
+  onNavigate: (page: PageKey) => void
+) => {
   if (page === 'movements') return <Movements />;
   if (page === 'banking') return <Banking />;
   if (page === 'savings') return <Savings />;
   if (page === 'analytics') return <Analytics data={data} />;
   if (page === 'settings') return <Settings />;
-  return <Dashboard data={data} />;
+  return <Dashboard data={data} onNavigate={onNavigate} />;
 };
 
 export const App = () => {
   const { data, loading, completeOnboarding, togglePrivacy } = useFinance();
   const [page, setPage] = useState<PageKey>('dashboard');
 
-  if (loading || !data) return <div className="loading-screen">Cargando Finanzas Control Pro...</div>;
+  if (loading || !data) return <div className="loading-screen">Cargando Manéjate...</div>;
   if (!data.settings.hasCompletedOnboarding) return <Onboarding onStart={completeOnboarding} />;
 
   return (
@@ -34,7 +38,7 @@ export const App = () => {
       page={page}
       privacyMode={data.settings.privacyMode}
     >
-      {renderPage(page, data)}
+      {renderPage(page, data, setPage)}
     </AppShell>
   );
 };

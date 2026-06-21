@@ -1,5 +1,5 @@
 export const formatMoney = (amount: number, currency = 'RD$', privacyMode = false) => {
-  if (privacyMode) return `${currency} ******`;
+  if (privacyMode) return `${currency} ••••••`;
   return `${currency} ${new Intl.NumberFormat('es-DO', {
     maximumFractionDigits: amount % 1 === 0 ? 0 : 2
   }).format(amount || 0)}`;

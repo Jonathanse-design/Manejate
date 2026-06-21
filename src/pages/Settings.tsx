@@ -36,7 +36,7 @@ export const Settings = () => {
     try {
       const parsed = JSON.parse(text) as unknown;
       if (!validateImportData(parsed)) {
-        setImportMessage('El archivo no tiene una estructura válida de Finanzas Control Pro.');
+        setImportMessage('El archivo no tiene una estructura válida de Manéjate.');
         return;
       }
       await importData(parsed);
@@ -118,7 +118,7 @@ export const Settings = () => {
           <li>Abrir el enlace publicado en Safari.</li>
           <li>Tocar el botón de compartir.</li>
           <li>Elegir “Agregar a pantalla de inicio”.</li>
-          <li>Abrir Finanzas Pro como app instalada.</li>
+          <li>Abrir Manéjate como app instalada.</li>
         </ol>
       </section>
     </div>

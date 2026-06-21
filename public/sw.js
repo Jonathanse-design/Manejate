@@ -1,4 +1,4 @@
-const CACHE_NAME = 'finanzas-control-pro-v1';
+const CACHE_NAME = 'manejate-pwa-v2';
 const APP_SHELL = [
   './',
   './index.html',
