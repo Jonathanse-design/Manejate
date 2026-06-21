@@ -97,14 +97,39 @@ export interface Category extends BaseEntity {
   kind: TransactionKind | 'both';
 }
 
+export type OnboardingStep =
+  | 'welcome'
+  | 'personal'
+  | 'income'
+  | 'expenses'
+  | 'banking'
+  | 'savings'
+  | 'emergency'
+  | 'backup'
+  | 'summary';
+
+export interface OnboardingState {
+  completed: boolean;
+  completedSteps: string[];
+  skippedSteps: string[];
+  lastStep?: string;
+  completedAt?: string;
+  hiddenSetupProgress?: boolean;
+}
+
 export interface AppSettings extends BaseEntity {
-  userName: string;
+  userName?: string;
   currency: string;
+  country?: string;
   financialMonthStart: number;
+  financialMonthStartDay: number;
+  estimatedMonthlyIncome?: number;
+  backupReminderEnabled?: boolean;
   theme: 'dark' | 'light';
   privacyMode: boolean;
   selectedMode: AppMode;
   hasCompletedOnboarding: boolean;
+  onboarding: OnboardingState;
   lastBackupAt?: string;
 }
 

@@ -41,11 +41,21 @@ export const createSettings = (): AppSettings => ({
   mode: 'real',
   userName: 'Jonathan',
   currency: 'RD$',
+  country: 'República Dominicana',
   financialMonthStart: 1,
-  theme: 'dark',
+  financialMonthStartDay: 1,
+  estimatedMonthlyIncome: undefined,
+  backupReminderEnabled: true,
+  theme: 'light',
   privacyMode: false,
   selectedMode: 'demo',
   hasCompletedOnboarding: false,
+  onboarding: {
+    completed: false,
+    completedSteps: [],
+    skippedSteps: [],
+    lastStep: 'welcome'
+  },
   ...stamp()
 });
 

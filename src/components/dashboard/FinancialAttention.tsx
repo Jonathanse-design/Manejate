@@ -9,7 +9,7 @@ const priority = {
 };
 
 export const FinancialAttention = ({ alerts }: { alerts: FinanceAlert[] }) => {
-  const visible = [...alerts].sort((a, b) => priority[a.level] - priority[b.level]).slice(0, 4);
+  const visible = [...alerts].sort((a, b) => priority[a.level] - priority[b.level]).slice(0, 3);
   return (
     <article className="panel attention-panel">
       <div className="section-title">

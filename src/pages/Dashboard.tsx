@@ -29,7 +29,7 @@ export const Dashboard = ({
   data: AppData;
   onNavigate: (page: PageKey) => void;
 }) => {
-  const { togglePrivacy, resetDemo, switchMode } = useFinance();
+  const { togglePrivacy, resetDemo, switchMode, hideSetupProgress } = useFinance();
   const active = activeData(data);
   const totals = totalsForPeriod(active.transactions, currentMonthPeriod());
   const alerts = buildAlerts(data);
@@ -47,6 +47,20 @@ export const Dashboard = ({
     !active.transactions.length &&
     !active.products.length &&
     !active.savingsGoals.length;
+  const setupSignals = [
+    Boolean(data.settings.userName),
+    Boolean(data.settings.estimatedMonthlyIncome || totals.income),
+    Boolean(active.transactions.some((item) => item.kind === 'expense' && item.expenseType === 'fixed')),
+    Boolean(active.products.length),
+    Boolean(active.savingsGoals.length),
+    Boolean(active.emergencyFund.currentAmount || active.emergencyFund.targetAmount),
+    Boolean(data.settings.lastBackupAt || data.settings.backupReminderEnabled)
+  ];
+  const setupCompleted = setupSignals.filter(Boolean).length;
+  const showSetupProgress =
+    active.mode === 'real' &&
+    setupCompleted < setupSignals.length &&
+    !data.settings.onboarding?.hiddenSetupProgress;
 
   const loadDemo = () => {
     resetDemo();
@@ -93,7 +107,29 @@ export const Dashboard = ({
             health={health}
             income={totals.income}
             privacyMode={privacy}
+            savings={totalSavings + active.emergencyFund.currentAmount}
           />
+          {showSetupProgress && (
+            <article className="setup-progress-card">
+              <div>
+                <span className="eyebrow">Configuración</span>
+                <h2>Termina de configurar Manéjate</h2>
+                <p>Completa tus datos para recibir análisis más útiles.</p>
+              </div>
+              <div className="setup-meter">
+                <strong>{setupCompleted} de {setupSignals.length} pasos completados</strong>
+                <div><i style={{ width: `${(setupCompleted / setupSignals.length) * 100}%` }} /></div>
+              </div>
+              <div className="setup-actions">
+                <button className="primary-btn" onClick={() => onNavigate('settings')} type="button">
+                  Continuar
+                </button>
+                <button className="secondary-btn" onClick={hideSetupProgress} type="button">
+                  Ocultar por ahora
+                </button>
+              </div>
+            </article>
+          )}
           <DashboardKpis
             currency={currency}
             expenses={totals.expenses}
@@ -102,6 +138,7 @@ export const Dashboard = ({
             savings={totalSavings + active.emergencyFund.currentAmount}
             upcomingDebt={upcomingDebt}
           />
+          <QuickActions onNavigate={onNavigate} />
 
           <section className="dashboard-grid">
             <FinancialAttention alerts={alerts} />
@@ -137,7 +174,6 @@ export const Dashboard = ({
               </p>
             </article>
           </section>
-          <QuickActions onNavigate={onNavigate} />
         </>
       )}
     </div>

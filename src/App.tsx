@@ -24,11 +24,11 @@ const renderPage = (
 };
 
 export const App = () => {
-  const { data, loading, completeOnboarding, togglePrivacy } = useFinance();
+  const { data, loading, togglePrivacy } = useFinance();
   const [page, setPage] = useState<PageKey>('dashboard');
 
   if (loading || !data) return <div className="loading-screen">Cargando Manéjate...</div>;
-  if (!data.settings.hasCompletedOnboarding) return <Onboarding onStart={completeOnboarding} />;
+  if (!(data.settings.onboarding?.completed ?? data.settings.hasCompletedOnboarding)) return <Onboarding />;
 
   return (
     <AppShell

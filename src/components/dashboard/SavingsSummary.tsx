@@ -29,11 +29,19 @@ export const SavingsSummary = ({
           <span>Ahorro en metas</span>
           <strong>{formatMoney(totalSaved, currency, privacyMode)}</strong>
           <p>{mainGoal ? `${mainGoal.name}: ${formatPercent((mainGoal.currentAmount / mainGoal.targetAmount) * 100)}` : 'Crea una meta para empezar.'}</p>
+          {mainGoal && (
+            <div className="progress-row">
+              <div><i style={{ width: `${Math.min((mainGoal.currentAmount / mainGoal.targetAmount) * 100, 100)}%` }} /></div>
+            </div>
+          )}
         </div>
         <div>
           <span>Fondo de emergencia</span>
           <strong>{formatMoney(emergencyFund.currentAmount, currency, privacyMode)}</strong>
           <p>Cubre {emergency.monthsCovered.toFixed(1)} meses. Estado: {emergency.status}.</p>
+          <div className="progress-row">
+            <div><i style={{ width: `${emergency.progress}%` }} /></div>
+          </div>
         </div>
       </div>
     </article>

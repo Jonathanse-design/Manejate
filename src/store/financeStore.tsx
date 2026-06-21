@@ -13,6 +13,7 @@ import { loadAppData, replaceAppData, saveAppData } from '../db/database';
 import type {
   AppData,
   AppMode,
+  AppSettings,
   BankProduct,
   CardConsumption,
   EmergencyFund,
@@ -20,7 +21,42 @@ import type {
   SavingsGoal,
   Transaction
 } from '../types/finance';
-import { nowIso } from '../utils/id';
+import { toDateKey } from '../utils/dates';
+import { createId, nowIso } from '../utils/id';
+
+export type OnboardingFlowPayload = {
+  mode: AppMode;
+  userName?: string;
+  currency: string;
+  country?: string;
+  financialMonthStartDay: number;
+  estimatedMonthlyIncome?: number;
+  fixedExpenses?: { name: string; amount: number }[];
+  bankProduct?: {
+    type: BankProduct['type'];
+    name: string;
+    bank: string;
+    balance: number;
+    creditLimit?: number;
+    paymentDueDay?: number;
+    cutDay?: number;
+  };
+  savingsGoal?: {
+    name: string;
+    targetAmount: number;
+    currentAmount: number;
+    monthlyContribution: number;
+  };
+  emergencyFund?: {
+    currentAmount: number;
+    targetAmount: number;
+    monthlyContribution: number;
+    selectedMonths: EmergencyFund['selectedMonths'];
+  };
+  backupReminderEnabled: boolean;
+  completedSteps: string[];
+  skippedSteps: string[];
+};
 
 type FinanceContextValue = {
   data: AppData | null;
@@ -28,6 +64,9 @@ type FinanceContextValue = {
   setData: (updater: (data: AppData) => AppData) => void;
   switchMode: (mode: AppMode) => void;
   completeOnboarding: (mode: AppMode) => void;
+  completeOnboardingFlow: (payload: OnboardingFlowPayload) => void;
+  updateSettings: (settings: Partial<AppSettings>) => void;
+  hideSetupProgress: () => void;
   togglePrivacy: () => void;
   addTransaction: (transaction: Transaction) => void;
   updateTransaction: (transaction: Transaction) => void;
@@ -48,6 +87,35 @@ type FinanceContextValue = {
 };
 
 const FinanceContext = createContext<FinanceContextValue | null>(null);
+
+const dateKeyInDays = (days: number) => {
+  const date = new Date();
+  date.setDate(date.getDate() + days);
+  return toDateKey(date);
+};
+
+const transactionFromOnboarding = (
+  mode: AppMode,
+  amount: number,
+  description: string,
+  category: string,
+  kind: Transaction['kind'],
+  expenseType?: Transaction['expenseType']
+): Transaction => ({
+  id: createId('tx'),
+  mode,
+  kind,
+  amount,
+  category,
+  description,
+  date: toDateKey(new Date()),
+  method: kind === 'income' ? 'Transferencia' : 'Débito automático',
+  note: 'Creado durante la configuración inicial.',
+  recurring: expenseType === 'fixed',
+  expenseType,
+  createdAt: nowIso(),
+  updatedAt: nowIso()
+});
 
 export const FinanceProvider = ({ children }: { children: ReactNode }) => {
   const [data, setDataState] = useState<AppData | null>(null);
@@ -91,9 +159,143 @@ export const FinanceProvider = ({ children }: { children: ReactNode }) => {
             ...current.settings,
             selectedMode: mode,
             hasCompletedOnboarding: true,
+            onboarding: {
+              ...current.settings.onboarding,
+              completed: true,
+              completedSteps: current.settings.onboarding?.completedSteps?.length
+                ? current.settings.onboarding.completedSteps
+                : ['welcome', 'summary'],
+              skippedSteps: current.settings.onboarding?.skippedSteps || [],
+              lastStep: 'summary',
+              completedAt: nowIso()
+            },
             updatedAt: nowIso()
           },
           emergencyFund: current.emergencyFund.mode === mode ? current.emergencyFund : createEmergencyFund(mode)
+        })),
+      completeOnboardingFlow: (payload) =>
+        setData((current) => {
+          const now = nowIso();
+          const mode = payload.mode;
+          const nextTransactions =
+            mode === 'real'
+              ? [
+                  ...(payload.estimatedMonthlyIncome
+                    ? [
+                        transactionFromOnboarding(
+                          mode,
+                          payload.estimatedMonthlyIncome,
+                          'Ingreso mensual estimado',
+                          'Sueldo',
+                          'income'
+                        )
+                      ]
+                    : []),
+                  ...(payload.fixedExpenses || [])
+                    .filter((expense) => expense.name && expense.amount > 0)
+                    .map((expense) =>
+                      transactionFromOnboarding(mode, expense.amount, expense.name, 'Servicios', 'expense', 'fixed')
+                    ),
+                  ...current.transactions
+                ]
+              : current.transactions;
+          const nextProducts =
+            mode === 'real' && payload.bankProduct?.name
+              ? [
+                  {
+                    id: createId('product'),
+                    mode,
+                    type: payload.bankProduct.type,
+                    name: payload.bankProduct.name,
+                    bank: payload.bankProduct.bank || 'Banco',
+                    balance: payload.bankProduct.balance || 0,
+                    currency: payload.currency,
+                    color: payload.bankProduct.type === 'credit-card' ? '#8B5CF6' : '#2DD4BF',
+                    creditLimit: payload.bankProduct.creditLimit,
+                    cutDay: payload.bankProduct.cutDay,
+                    paymentDueDay: payload.bankProduct.paymentDueDay,
+                    createdAt: now,
+                    updatedAt: now
+                  },
+                  ...current.products
+                ]
+              : current.products;
+          const nextSavings =
+            mode === 'real' && payload.savingsGoal?.name
+              ? [
+                  {
+                    id: createId('goal'),
+                    mode,
+                    name: payload.savingsGoal.name,
+                    targetAmount: payload.savingsGoal.targetAmount || 0,
+                    currentAmount: payload.savingsGoal.currentAmount || 0,
+                    targetDate: dateKeyInDays(180),
+                    desiredMonthlyContribution: payload.savingsGoal.monthlyContribution || 0,
+                    priority: 'alta' as const,
+                    note: 'Creada durante la configuración inicial.',
+                    createdAt: now,
+                    updatedAt: now
+                  },
+                  ...current.savingsGoals
+                ]
+              : current.savingsGoals;
+          const nextEmergency =
+            mode === 'real'
+              ? {
+                  ...createEmergencyFund(mode),
+                  currentAmount: payload.emergencyFund?.currentAmount || 0,
+                  targetAmount: payload.emergencyFund?.targetAmount || 0,
+                  monthlyContribution: payload.emergencyFund?.monthlyContribution || 0,
+                  selectedMonths: payload.emergencyFund?.selectedMonths || 3,
+                  targetDate: dateKeyInDays(240),
+                  updatedAt: now
+                }
+              : current.emergencyFund.mode === 'demo'
+                ? current.emergencyFund
+                : createEmergencyFund('demo');
+
+          return {
+            ...current,
+            settings: {
+              ...current.settings,
+              userName: payload.userName?.trim() || current.settings.userName || 'Jonathan',
+              currency: payload.currency,
+              country: payload.country?.trim() || current.settings.country,
+              financialMonthStart: payload.financialMonthStartDay,
+              financialMonthStartDay: payload.financialMonthStartDay,
+              estimatedMonthlyIncome: payload.estimatedMonthlyIncome,
+              backupReminderEnabled: payload.backupReminderEnabled,
+              selectedMode: mode,
+              hasCompletedOnboarding: true,
+              onboarding: {
+                completed: true,
+                completedSteps: payload.completedSteps,
+                skippedSteps: payload.skippedSteps,
+                lastStep: 'summary',
+                completedAt: now,
+                hiddenSetupProgress: false
+              },
+              updatedAt: now
+            },
+            transactions: nextTransactions,
+            products: nextProducts,
+            savingsGoals: nextSavings,
+            emergencyFund: nextEmergency
+          };
+        }),
+      updateSettings: (settings) =>
+        setData((current) => ({
+          ...current,
+          settings: { ...current.settings, ...settings, updatedAt: nowIso() }
+        })),
+      hideSetupProgress: () =>
+        setData((current) => ({
+          ...current,
+          settings: {
+            ...current.settings,
+            onboarding: { ...current.settings.onboarding, hiddenSetupProgress: true },
+            updatedAt: nowIso()
+          }
         })),
       togglePrivacy: () =>
         setData((current) => ({
