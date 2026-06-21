@@ -340,7 +340,9 @@ Mantener un margen mínimo alrededor del logo equivalente al 20% de la altura de
 
 def main() -> None:
     source_symbol = SOURCE_SYMBOL
-    source_logo = ROOT / "Manejate.png"
+    source_logo = OUT / "source" / "Manejate.png"
+    if not source_logo.exists():
+        source_logo = ROOT / "Manejate.png"
     source_symbol_bytes = source_symbol.read_bytes()
     source_logo_bytes = source_logo.read_bytes() if source_logo.exists() else None
     if OUT.exists():

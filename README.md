@@ -107,7 +107,7 @@ Los assets de marca viven en:
 ```text
 public/assets/
 public/icons/
-brand-assets/
+brand/
 ```
 
-El logo principal se deriva del logo aprobado de Manéjate y cuenta con variantes para fondo oscuro, fondo claro, favicon e iconos PWA.
+El logo principal se deriva del logo aprobado de Manéjate y cuenta con variantes para fondo oscuro, fondo claro, favicon, app icon e iconos PWA.
