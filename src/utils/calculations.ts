@@ -88,16 +88,13 @@ export const cardUsage = (products: BankProduct[], cardConsumptions: AppData['ca
   creditCards(products).map((card) => {
     const consumed = sum(cardConsumptions.filter((item) => item.cardId === card.id).map((item) => item.amount));
     const limit = card.creditLimit || 0;
-    const balance = card.currentBalance ?? card.balance ?? 0;
-    const totalConsumed = Math.max(consumed + balance, balance);
     return {
       card,
-      consumed: totalConsumed,
-      cycleConsumed: consumed,
-      available: Math.max(limit - totalConsumed, 0),
-      usage: limit ? (totalConsumed / limit) * 100 : 0,
-      dueDate: card.paymentDueDate || nextDateFromDay(card.recurringDueDay || card.paymentDueDay),
-      cutDate: card.statementClosingDate || nextDateFromDay(card.recurringClosingDay || card.cutDay)
+      consumed,
+      available: Math.max(limit - consumed, 0),
+      usage: limit ? (consumed / limit) * 100 : 0,
+      dueDate: nextDateFromDay(card.paymentDueDay),
+      cutDate: nextDateFromDay(card.cutDay)
     };
   });
 
@@ -111,8 +108,8 @@ export const upcomingPayments = (products: BankProduct[]) =>
           id: product.id,
           title: product.name,
           type: 'Tarjeta',
-          amount: product.estimatedFullPayment || product.estimatedPayment || product.minimumPayment || product.balance,
-          date: product.paymentDueDate || nextDateFromDay(product.recurringDueDay || product.paymentDueDay)
+          amount: product.estimatedPayment || product.minimumPayment || product.balance,
+          date: nextDateFromDay(product.paymentDueDay)
         }];
       }
       if (product.type === 'loan') {
@@ -121,34 +118,12 @@ export const upcomingPayments = (products: BankProduct[]) =>
           title: product.name,
           type: 'Préstamo',
           amount: product.monthlyPayment || 0,
-          date: product.nextPaymentDate || nextDateFromDay(product.recurringPaymentDay || product.paymentDay)
+          date: product.nextPaymentDate || nextDateFromDay(product.paymentDay)
         }];
       }
       return [];
     })
     .sort((a, b) => a.date.localeCompare(b.date));
-
-export const productPaymentStatus = (date?: string) => {
-  if (!date) return 'current' as const;
-  const days = differenceInCalendarDays(parseISO(date), today());
-  if (days < 0) return 'overdue' as const;
-  if (days === 0) return 'due_today' as const;
-  if (days <= 7) return 'upcoming' as const;
-  return 'current' as const;
-};
-
-export const loanProgress = (loan: BankProduct) => {
-  const totalInstallments = loan.totalInstallments || loan.termMonths || 0;
-  const paidInstallments = Math.min(loan.paidInstallments || 0, totalInstallments);
-  const remainingInstallments = Math.max((loan.remainingInstallments ?? totalInstallments - paidInstallments) || 0, 0);
-  const progress = totalInstallments ? (paidInstallments / totalInstallments) * 100 : 0;
-  return {
-    totalInstallments,
-    paidInstallments,
-    remainingInstallments,
-    progress
-  };
-};
 
 export const financialHealth = (income: number, expenses: number): FinancialHealth => {
   if (!income && expenses) return 'critical';

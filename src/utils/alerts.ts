@@ -81,23 +81,6 @@ export const buildAlerts = (data: AppData): FinanceAlert[] => {
     }
   });
 
-  active.products
-    .filter((product) => product.type === 'credit-card')
-    .forEach((card) => {
-      const closing = card.statementClosingDate;
-      if (!closing) return;
-      const days = differenceInCalendarDays(parseISO(closing), today());
-      if (days >= 0 && days <= 3) {
-        push({
-          level: 'info',
-          title: 'Corte de tarjeta próximo',
-          message: `${card.name} corta ${days === 0 ? 'hoy' : `en ${days} días`}.`,
-          action: 'Revisar consumos del ciclo',
-          relatedId: card.id
-        });
-      }
-    });
-
   cardUsage(active.products, active.cardConsumptions).forEach(({ card, usage }) => {
     if (usage >= 80) {
       push({
