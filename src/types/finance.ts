@@ -36,11 +36,16 @@ export interface BankProduct extends BaseEntity {
   creditLimit?: number;
   cutDay?: number;
   paymentDueDay?: number;
+  statementClosingDate?: string;
+  paymentDueDate?: string;
   minimumPayment?: number;
   estimatedPayment?: number;
+  estimatedFullPayment?: number;
   interestRate?: number;
   originalAmount?: number;
   monthlyPayment?: number;
+  totalInstallments?: number;
+  paidInstallments?: number;
   paymentDay?: number;
   nextPaymentDate?: string;
   termMonths?: number;

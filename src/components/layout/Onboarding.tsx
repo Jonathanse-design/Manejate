@@ -15,7 +15,7 @@ import { useFinance, type OnboardingFlowPayload } from '../../store/financeStore
 import type { AppMode, BankProduct, EmergencyFund, OnboardingStep } from '../../types/finance';
 
 const steps: { key: OnboardingStep; title: string; eyebrow: string }[] = [
-  { key: 'welcome', title: 'Configura Manéjate', eyebrow: 'Bienvenida' },
+  { key: 'welcome', title: 'Personaliza tu dashboard financiero', eyebrow: 'Bienvenida' },
   { key: 'personal', title: 'Tu punto de partida', eyebrow: 'Datos personales' },
   { key: 'income', title: 'Cuánto entra cada mes', eyebrow: 'Ingresos' },
   { key: 'expenses', title: 'Tus compromisos fijos', eyebrow: 'Gastos fijos' },
@@ -30,8 +30,13 @@ type FixedExpenseDraft = { name: string; amount: string };
 
 const defaultExpenses: FixedExpenseDraft[] = [
   { name: 'Alquiler / vivienda', amount: '' },
-  { name: 'Servicios', amount: '' },
-  { name: 'Transporte', amount: '' }
+  { name: 'Comida básica', amount: '' },
+  { name: 'Energía eléctrica', amount: '' },
+  { name: 'Internet', amount: '' },
+  { name: 'Teléfono', amount: '' },
+  { name: 'Transporte / combustible', amount: '' },
+  { name: 'Préstamos', amount: '' },
+  { name: 'Tarjetas', amount: '' }
 ];
 
 const toNumber = (value: string) => Number(value.replace(/[^\d.]/g, '')) || 0;
@@ -127,11 +132,11 @@ export const Onboarding = ({ onStart }: { onStart?: (mode: AppMode) => void }) =
     <section className="onboarding">
       <div className="onboarding-shell">
         <aside className="onboarding-side">
-          <img src="./assets/logo-manejate-dark.svg" alt="Manéjate" />
+          <img className="brand-logo" src="./assets/logo-manejate-dark.svg" alt="Manéjate" />
           <div>
             <p className="eyebrow">Primera configuración</p>
-            <h1>Configura Manéjate</h1>
-            <p>Un recorrido corto para que el dashboard entienda tus ingresos, pagos, metas y respaldo.</p>
+            <h1>Personaliza tu dashboard financiero</h1>
+            <p>Un recorrido corto para que Manéjate entienda tus ingresos, pagos, productos, metas y respaldo.</p>
           </div>
           <div className="wizard-progress" aria-label={`Progreso ${progress}%`}>
             <span style={{ width: `${progress}%` }} />
@@ -252,7 +257,7 @@ export const Onboarding = ({ onStart }: { onStart?: (mode: AppMode) => void }) =
                     <input inputMode="decimal" value={creditLimit} onChange={(event) => setCreditLimit(event.target.value)} />
                   </label>
                   <label>
-                    Corte
+                    Día de corte
                     <input min="1" max="28" type="number" value={cutDay} onChange={(event) => setCutDay(event.target.value)} />
                   </label>
                   <label>

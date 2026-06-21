@@ -88,13 +88,14 @@ export const cardUsage = (products: BankProduct[], cardConsumptions: AppData['ca
   creditCards(products).map((card) => {
     const consumed = sum(cardConsumptions.filter((item) => item.cardId === card.id).map((item) => item.amount));
     const limit = card.creditLimit || 0;
+    const used = Math.max(card.balance || 0, consumed);
     return {
       card,
-      consumed,
-      available: Math.max(limit - consumed, 0),
-      usage: limit ? (consumed / limit) * 100 : 0,
-      dueDate: nextDateFromDay(card.paymentDueDay),
-      cutDate: nextDateFromDay(card.cutDay)
+      consumed: used,
+      available: Math.max(limit - used, 0),
+      usage: limit ? (used / limit) * 100 : 0,
+      dueDate: card.paymentDueDate || nextDateFromDay(card.paymentDueDay),
+      cutDate: card.statementClosingDate || nextDateFromDay(card.cutDay)
     };
   });
 
@@ -108,8 +109,8 @@ export const upcomingPayments = (products: BankProduct[]) =>
           id: product.id,
           title: product.name,
           type: 'Tarjeta',
-          amount: product.estimatedPayment || product.minimumPayment || product.balance,
-          date: nextDateFromDay(product.paymentDueDay)
+          amount: product.estimatedFullPayment || product.estimatedPayment || product.minimumPayment || product.balance,
+          date: product.paymentDueDate || nextDateFromDay(product.paymentDueDay)
         }];
       }
       if (product.type === 'loan') {
@@ -124,6 +125,18 @@ export const upcomingPayments = (products: BankProduct[]) =>
       return [];
     })
     .sort((a, b) => a.date.localeCompare(b.date));
+
+export const loanInstallments = (loan: BankProduct) => {
+  const total = loan.totalInstallments || loan.termMonths || 0;
+  const paid = Math.min(loan.paidInstallments || 0, total);
+  const remaining = Math.max(total - paid, 0);
+  return {
+    total,
+    paid,
+    remaining,
+    progress: total ? (paid / total) * 100 : 0
+  };
+};
 
 export const financialHealth = (income: number, expenses: number): FinancialHealth => {
   if (!income && expenses) return 'critical';
