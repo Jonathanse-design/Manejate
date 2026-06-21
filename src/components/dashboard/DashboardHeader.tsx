@@ -25,7 +25,7 @@ export const DashboardHeader = ({
 }) => (
   <header className="dashboard-header">
     <div className="dashboard-brand-row">
-      <img src="./assets/logo-manejate-light.svg" alt="Manéjate" />
+      <img src="./assets/logo-manejate-dark.svg" alt="Manéjate" />
       <span className={`mode-pill ${mode}`}>{mode === 'demo' ? 'Modo Demo' : 'Modo Real'}</span>
     </div>
     <div className="dashboard-welcome">

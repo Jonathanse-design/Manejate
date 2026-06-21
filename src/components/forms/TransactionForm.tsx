@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import type { AppMode, Transaction } from '../../types/finance';
+import type { AppMode, BankProduct, Transaction } from '../../types/finance';
 import { toDateKey } from '../../utils/dates';
 import { createId, nowIso } from '../../utils/id';
 
@@ -27,16 +27,21 @@ const methods = ['Efectivo', 'Cuenta bancaria', 'Tarjeta de débito', 'Tarjeta d
 
 export const TransactionForm = ({
   mode,
+  products = [],
   onSave
 }: {
   mode: AppMode;
+  products?: BankProduct[];
   onSave: (transaction: Transaction) => void;
 }) => {
   const [kind, setKind] = useState<Transaction['kind']>('expense');
+  const [date, setDate] = useState(toDateKey(new Date()));
   const [amount, setAmount] = useState('');
   const [category, setCategory] = useState('Comida');
   const [description, setDescription] = useState('');
   const [expenseType, setExpenseType] = useState<Transaction['expenseType']>('variable');
+  const [method, setMethod] = useState(methods[0]);
+  const [linkedProductId, setLinkedProductId] = useState('');
 
   const save = () => {
     const value = Number(amount);
@@ -49,10 +54,11 @@ export const TransactionForm = ({
       amount: value,
       category,
       description: description || category,
-      date: toDateKey(new Date()),
-      method: methods[0],
+      date,
+      method,
       recurring: expenseType === 'fixed',
       expenseType: kind === 'expense' ? expenseType : undefined,
+      linkedProductId: linkedProductId || undefined,
       createdAt: stamp,
       updatedAt: stamp
     });
@@ -72,6 +78,10 @@ export const TransactionForm = ({
           Ingreso
         </button>
       </div>
+      <label>
+        Fecha
+        <input onChange={(event) => setDate(event.target.value)} type="date" value={date} />
+      </label>
       <label>
         Monto
         <input inputMode="decimal" onChange={(event) => setAmount(event.target.value)} placeholder="RD$ 0" value={amount} />
@@ -94,6 +104,23 @@ export const TransactionForm = ({
           </select>
         </label>
       )}
+      <label>
+        Método
+        <select onChange={(event) => setMethod(event.target.value)} value={method}>
+          {methods.map((item) => (
+            <option key={item}>{item}</option>
+          ))}
+        </select>
+      </label>
+      <label>
+        Producto asociado
+        <select onChange={(event) => setLinkedProductId(event.target.value)} value={linkedProductId}>
+          <option value="">Sin producto</option>
+          {products.map((product) => (
+            <option key={product.id} value={product.id}>{product.name}</option>
+          ))}
+        </select>
+      </label>
       <label>
         Descripción o nota
         <input onChange={(event) => setDescription(event.target.value)} placeholder="Ej. supermercado, sueldo, gasolina" value={description} />

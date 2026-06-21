@@ -14,22 +14,27 @@ export const CardConsumptionForm = ({
   onSave: (consumption: CardConsumption) => void;
 }) => {
   const [cardId, setCardId] = useState(cards[0]?.id || '');
+  const [date, setDate] = useState(toDateKey(new Date()));
   const [amount, setAmount] = useState('');
   const [merchant, setMerchant] = useState('');
   const [category, setCategory] = useState('Tarjetas');
+  const [installments, setInstallments] = useState('1');
+  const [notes, setNotes] = useState('');
 
   const save = () => {
-    if (!cardId || !Number(amount)) return;
+    if (!cardId || !Number(amount) || Number(amount) <= 0) return;
     const stamp = nowIso();
     onSave({
       id: createId('cc'),
       mode,
       cardId,
-      date: toDateKey(new Date()),
+      date,
       amount: Number(amount),
       merchant: merchant || 'Consumo tarjeta',
       category,
-      installments: 1,
+      installments: Number(installments) || 1,
+      note: notes,
+      notes,
       billingCycle: 'Actual',
       createdAt: stamp,
       updatedAt: stamp
@@ -51,6 +56,10 @@ export const CardConsumptionForm = ({
         </select>
       </label>
       <label>
+        Fecha
+        <input onChange={(event) => setDate(event.target.value)} type="date" value={date} />
+      </label>
+      <label>
         Monto
         <input inputMode="decimal" onChange={(event) => setAmount(event.target.value)} value={amount} />
       </label>
@@ -61,6 +70,14 @@ export const CardConsumptionForm = ({
       <label>
         Categoría
         <input onChange={(event) => setCategory(event.target.value)} value={category} />
+      </label>
+      <label>
+        Cantidad de cuotas opcional
+        <input inputMode="numeric" min="1" onChange={(event) => setInstallments(event.target.value)} type="number" value={installments} />
+      </label>
+      <label>
+        Notas
+        <input onChange={(event) => setNotes(event.target.value)} value={notes} />
       </label>
       <button className="primary-btn" disabled={!cards.length} onClick={save} type="button">
         Registrar consumo

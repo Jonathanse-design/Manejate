@@ -20,7 +20,8 @@ import {
   upcomingPayments
 } from '../utils/calculations';
 import { buildAlerts } from '../utils/alerts';
-import { currentMonthPeriod } from '../utils/dates';
+import { currentMonthPeriod, humanDate } from '../utils/dates';
+import { formatMoney } from '../utils/formatters';
 
 export const Dashboard = ({
   data,
@@ -172,6 +173,25 @@ export const Dashboard = ({
                     ? 'Vas avanzando, pero todavía estás por debajo de dos meses.'
                     : 'Mantén aportes constantes para proteger tu flujo.'}
               </p>
+            </article>
+            <article className="panel recent-movements-panel">
+              <div className="section-title">
+                <h3>Movimientos recientes</h3>
+                <button className="secondary-btn" onClick={() => onNavigate('movements')} type="button">Ver todos</button>
+              </div>
+              <div className="list-stack">
+                {active.transactions.slice(0, 5).map((transaction) => (
+                  <div className="row-item movement-row" key={transaction.id}>
+                    <div>
+                      <strong>{transaction.description}</strong>
+                      <span>{humanDate(transaction.date)} · {transaction.category}</span>
+                    </div>
+                    <b className={transaction.kind}>
+                      {transaction.kind === 'income' ? '+' : '-'}{formatMoney(transaction.amount, currency, privacy)}
+                    </b>
+                  </div>
+                ))}
+              </div>
             </article>
           </section>
         </>

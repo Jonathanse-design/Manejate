@@ -4,6 +4,7 @@ export type ExpenseType = 'fixed' | 'variable' | 'extraordinary';
 export type ProductType = 'credit-card' | 'loan' | 'bank-account' | 'other';
 export type AlertLevel = 'info' | 'warning' | 'critical' | 'success';
 export type FinancialHealth = 'healthy' | 'tight' | 'critical';
+export type ProductStatus = 'current' | 'upcoming' | 'due_today' | 'overdue';
 
 export interface BaseEntity {
   id: string;
@@ -29,21 +30,38 @@ export interface BankProduct extends BaseEntity {
   type: ProductType;
   name: string;
   bank: string;
+  bankName?: string;
+  last4?: string;
   balance: number;
+  currentBalance?: number;
+  statementBalance?: number;
   currency: string;
   color: string;
+  status?: ProductStatus;
   notes?: string;
   creditLimit?: number;
   cutDay?: number;
   paymentDueDay?: number;
+  statementClosingDate?: string;
+  paymentDueDate?: string;
+  recurringClosingDay?: number;
+  recurringDueDay?: number;
   minimumPayment?: number;
   estimatedPayment?: number;
+  estimatedFullPayment?: number;
   interestRate?: number;
   originalAmount?: number;
+  remainingBalance?: number;
   monthlyPayment?: number;
+  totalInstallments?: number;
+  paidInstallments?: number;
+  remainingInstallments?: number;
+  startDate?: string;
+  recurringPaymentDay?: number;
   paymentDay?: number;
   nextPaymentDate?: string;
   termMonths?: number;
+  accountType?: string;
 }
 
 export interface CardConsumption extends BaseEntity {
@@ -54,6 +72,7 @@ export interface CardConsumption extends BaseEntity {
   category: string;
   installments?: number;
   note?: string;
+  notes?: string;
   billingCycle?: string;
 }
 
@@ -61,7 +80,12 @@ export interface LoanPayment extends BaseEntity {
   loanId: string;
   date: string;
   amount: number;
+  installmentNumber?: number;
+  principal?: number;
+  interest?: number;
+  lateFee?: number;
   note?: string;
+  notes?: string;
 }
 
 export interface SavingsGoal extends BaseEntity {

@@ -3,8 +3,16 @@ import { Trash2 } from 'lucide-react';
 import { CardConsumptionForm } from '../components/forms/CardConsumptionForm';
 import { ProductForm } from '../components/forms/ProductForm';
 import { useFinance } from '../store/financeStore';
-import { activeData, cardUsage, creditCards, loans } from '../utils/calculations';
+import { activeData, cardUsage, creditCards, loans, loanProgress, productPaymentStatus } from '../utils/calculations';
+import { daysUntil, humanDate } from '../utils/dates';
 import { formatMoney, formatPercent } from '../utils/formatters';
+
+const statusLabel = {
+  current: 'Al día',
+  upcoming: 'Próximo',
+  due_today: 'Vence hoy',
+  overdue: 'Vencido'
+};
 
 export const Banking = () => {
   const { data, addProduct, deleteProduct, addCardConsumption, deleteCardConsumption } = useFinance();
@@ -21,15 +29,75 @@ export const Banking = () => {
           <span>{active.products.length}</span>
         </div>
         <div className="card-grid">
-          {active.products.map((product) => (
-            <article className="bank-card" key={product.id} style={{ borderColor: product.color }}>
-              <span>{product.type === 'credit-card' ? 'Tarjeta' : product.type === 'loan' ? 'Préstamo' : 'Cuenta'}</span>
-              <h3>{product.name}</h3>
-              <p>{product.bank}</p>
-              <strong>{formatMoney(product.balance, currency, data.settings.privacyMode)}</strong>
-              <button className="icon-button" onClick={() => deleteProduct(product.id)} type="button"><Trash2 size={17} /></button>
-            </article>
-          ))}
+          {active.products.map((product) => {
+            const isCard = product.type === 'credit-card';
+            const isLoan = product.type === 'loan';
+            const usage = isCard ? cardUsage([product], active.cardConsumptions)[0] : null;
+            const loan = isLoan ? loanProgress(product) : null;
+            const dueDate = isCard
+              ? product.paymentDueDate || usage?.dueDate
+              : product.nextPaymentDate;
+            const status = productPaymentStatus(dueDate);
+            return (
+              <article className={`bank-card product-card ${product.type}`} key={product.id} style={{ borderColor: product.color }}>
+                <div className="product-card-head">
+                  <div>
+                    <span>{isCard ? 'Tarjeta de crédito' : isLoan ? 'Préstamo' : product.accountType || 'Cuenta bancaria'}</span>
+                    <h3>{product.name}{product.last4 ? ` • ${product.last4}` : ''}</h3>
+                    <p>{product.bank || product.bankName || 'Entidad financiera'}</p>
+                  </div>
+                  <em className={`status-chip ${status}`}>{statusLabel[status]}</em>
+                </div>
+
+                {isCard && usage && (
+                  <>
+                    <div className="product-metrics">
+                      <span>Balance actual <b>{formatMoney(product.currentBalance ?? product.balance, currency, data.settings.privacyMode)}</b></span>
+                      <span>Límite <b>{formatMoney(product.creditLimit || 0, currency, data.settings.privacyMode)}</b></span>
+                      <span>Disponible <b>{formatMoney(usage.available, currency, data.settings.privacyMode)}</b></span>
+                      <span>Pago mínimo <b>{formatMoney(product.minimumPayment || 0, currency, data.settings.privacyMode)}</b></span>
+                    </div>
+                    <div className="progress-row">
+                      <span>Uso del límite</span>
+                      <strong>{formatPercent(usage.usage)}</strong>
+                      <div><i style={{ width: `${Math.min(usage.usage, 100)}%` }} /></div>
+                    </div>
+                    <div className="product-dates">
+                      <span>Corte <b>{humanDate(usage.cutDate)}</b><small>{daysUntil(usage.cutDate)} días</small></span>
+                      <span>Fecha límite <b>{humanDate(usage.dueDate)}</b><small>{daysUntil(usage.dueDate)} días</small></span>
+                    </div>
+                  </>
+                )}
+
+                {isLoan && loan && (
+                  <>
+                    <div className="product-metrics">
+                      <span>Balance pendiente <b>{formatMoney(product.remainingBalance ?? product.balance, currency, data.settings.privacyMode)}</b></span>
+                      <span>Cuota mensual <b>{formatMoney(product.monthlyPayment || 0, currency, data.settings.privacyMode)}</b></span>
+                      <span>Cuotas <b>{loan.paidInstallments}/{loan.totalInstallments}</b></span>
+                      <span>Restantes <b>{loan.remainingInstallments}</b></span>
+                    </div>
+                    <div className="progress-row">
+                      <span>Progreso del préstamo</span>
+                      <strong>{formatPercent(loan.progress)}</strong>
+                      <div><i style={{ width: `${Math.min(loan.progress, 100)}%` }} /></div>
+                    </div>
+                    <div className="product-dates">
+                      <span>Próximo pago <b>{product.nextPaymentDate ? humanDate(product.nextPaymentDate) : 'Sin fecha'}</b></span>
+                    </div>
+                  </>
+                )}
+
+                {!isCard && !isLoan && (
+                  <div className="product-metrics">
+                    <span>Balance actual <b>{formatMoney(product.balance, currency, data.settings.privacyMode)}</b></span>
+                    <span>Moneda <b>{product.currency}</b></span>
+                  </div>
+                )}
+                <button aria-label="Eliminar producto" className="icon-button" onClick={() => deleteProduct(product.id)} type="button"><Trash2 size={17} /></button>
+              </article>
+            );
+          })}
         </div>
 
         <div className="content-grid compact">
@@ -74,8 +142,8 @@ export const Banking = () => {
         </article>
       </section>
       <aside>
-        <h3>Nuevo producto</h3>
-        <ProductForm mode={active.mode} onSave={addProduct} />
+        <h3>Agregar producto financiero</h3>
+        <ProductForm currency={currency} mode={active.mode} onSave={addProduct} />
         <h3>Consumo de tarjeta</h3>
         <CardConsumptionForm cards={cards} mode={active.mode} onSave={addCardConsumption} />
       </aside>
