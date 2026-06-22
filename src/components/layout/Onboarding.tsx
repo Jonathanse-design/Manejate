@@ -174,7 +174,7 @@ export const Onboarding = ({ onStart }: { onStart?: (mode: AppMode) => void }) =
     <section className="onboarding">
       <div className="onboarding-shell">
         <aside className="onboarding-side">
-          <img className="brand-logo" src="./assets/logo-manejate-dark.svg" alt="Manéjate" />
+          <img className="brand-logo" src="./assets/logo-manejate-light.svg" alt="Manéjate" />
           <div>
             <p className="eyebrow">Primera configuración</p>
             <h1>Personaliza tu dashboard financiero</h1>

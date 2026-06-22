@@ -29,6 +29,12 @@ import { currentMonthPeriod } from '../utils/dates';
 import { formatMoney, formatPercent } from '../utils/formatters';
 
 const colors = ['#38BDF8', '#8B5CF6', '#22C55E', '#F59E0B', '#EF4444', '#14B8A6'];
+const tooltipStyle = {
+  background: 'rgba(6, 18, 44, 0.92)',
+  border: '1px solid rgba(154, 183, 255, 0.22)',
+  borderRadius: 18,
+  color: '#EEF4FF'
+};
 
 export const Analytics = ({ data }: { data: AppData }) => {
   const active = activeData(data);
@@ -58,7 +64,7 @@ export const Analytics = ({ data }: { data: AppData }) => {
               <CartesianGrid strokeDasharray="3 3" stroke="#23304A" />
               <XAxis dataKey="month" stroke="#94A3B8" />
               <YAxis stroke="#94A3B8" />
-              <Tooltip contentStyle={{ background: '#111827', border: '1px solid #334155' }} />
+              <Tooltip contentStyle={tooltipStyle} />
               <Area dataKey="ingresos" stroke="#22C55E" fill="#22C55E33" />
               <Area dataKey="gastos" stroke="#EF4444" fill="#EF444433" />
             </AreaChart>
@@ -74,7 +80,7 @@ export const Analytics = ({ data }: { data: AppData }) => {
               <Pie data={categoryData.slice(0, 6)} dataKey="value" nameKey="name" outerRadius={82}>
                 {categoryData.slice(0, 6).map((_, index) => <Cell fill={colors[index % colors.length]} key={index} />)}
               </Pie>
-              <Tooltip contentStyle={{ background: '#111827', border: '1px solid #334155' }} />
+              <Tooltip contentStyle={tooltipStyle} />
             </PieChart>
           </ResponsiveContainer>
         </div>
@@ -87,7 +93,7 @@ export const Analytics = ({ data }: { data: AppData }) => {
             <BarChart data={typeData}>
               <XAxis dataKey="name" stroke="#94A3B8" />
               <YAxis stroke="#94A3B8" />
-              <Tooltip contentStyle={{ background: '#111827', border: '1px solid #334155' }} />
+              <Tooltip contentStyle={tooltipStyle} />
               <Bar dataKey="value" fill="#38BDF8" radius={[8, 8, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>

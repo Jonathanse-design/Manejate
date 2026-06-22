@@ -1,4 +1,4 @@
-const CACHE_NAME = 'manejate-pwa-v8';
+const CACHE_NAME = 'manejate-pwa-v9';
 const APP_SHELL = [
   '/Manejate/',
   '/Manejate/index.html',

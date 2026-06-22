@@ -2,32 +2,32 @@
 
 /* 1. Design tokens */
 :root {
-  color-scheme: light;
-  --color-bg-main: #fbf8f3;
-  --color-bg-soft: #f4f9f7;
-  --color-bg-blue: #eef8ff;
-  --color-bg-lavender: #f5f0ff;
-  --color-bg-peach: #fff1e8;
-  --color-surface: rgba(255, 255, 255, 0.86);
-  --color-surface-strong: rgba(255, 255, 255, 0.94);
-  --color-surface-glass: rgba(255, 255, 255, 0.68);
-  --color-text-heading: #111827;
-  --color-text-primary: #172033;
-  --color-text-secondary: #475569;
-  --color-text-muted: #64748b;
-  --color-border-soft: rgba(100, 116, 139, 0.18);
-  --color-border-strong: rgba(100, 116, 139, 0.28);
-  --color-border-glass: rgba(255, 255, 255, 0.66);
+  color-scheme: dark;
+  --color-bg-main: #03091d;
+  --color-bg-soft: #07122c;
+  --color-bg-blue: rgba(0, 87, 255, 0.18);
+  --color-bg-lavender: rgba(124, 58, 237, 0.18);
+  --color-bg-peach: rgba(255, 122, 0, 0.16);
+  --color-surface: rgba(11, 23, 52, 0.58);
+  --color-surface-strong: rgba(14, 28, 62, 0.78);
+  --color-surface-glass: rgba(13, 27, 61, 0.54);
+  --color-text-heading: #f8fbff;
+  --color-text-primary: #eef4ff;
+  --color-text-secondary: #aab8d6;
+  --color-text-muted: #7584a5;
+  --color-border-soft: rgba(154, 183, 255, 0.16);
+  --color-border-strong: rgba(154, 183, 255, 0.28);
+  --color-border-glass: rgba(255, 255, 255, 0.14);
   --color-brand-mint: #2dd4bf;
   --color-brand-aqua: #38bdf8;
   --color-brand-sky: #7dd3fc;
   --color-brand-lavender: #a78bfa;
   --color-brand-violet: #7c3aed;
-  --color-income: #16a34a;
-  --color-expense: #e11d48;
-  --color-warning: #d97706;
-  --color-danger: #dc2626;
-  --color-saving: #0f766e;
+  --color-income: #20e48a;
+  --color-expense: #ff5f7d;
+  --color-warning: #ffb020;
+  --color-danger: #ff4d6d;
+  --color-saving: #2dd4bf;
   --color-debt: #7c3aed;
   --color-blue: #0057ff;
   --color-orange: #ff7a00;
@@ -64,19 +64,25 @@
   --space-6: 24px;
   --space-8: 32px;
   --space-10: 40px;
-  --shadow-soft: 0 12px 28px rgba(15, 23, 42, 0.06);
-  --shadow-card: 0 18px 48px rgba(15, 23, 42, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.82);
-  --shadow-elevated: 0 28px 80px rgba(15, 23, 42, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.90);
+  --shadow-soft: 0 18px 44px rgba(1, 7, 23, 0.34);
+  --shadow-card:
+    0 24px 68px rgba(1, 7, 23, 0.48),
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  --shadow-elevated:
+    0 34px 110px rgba(1, 7, 23, 0.62),
+    0 18px 60px rgba(0, 87, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
   --gradient-brand: linear-gradient(135deg, #0057ff 0%, #7c3aed 52%, #ff7a00 100%);
   --gradient-blue: linear-gradient(135deg, #0057ff 0%, #38bdf8 100%);
   --gradient-violet: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
   --gradient-orange: linear-gradient(135deg, #ff7a00 0%, #fbbf24 100%);
   --gradient-page:
-    radial-gradient(circle at 12% 8%, rgba(103, 232, 249, 0.32), transparent 28%),
-    radial-gradient(circle at 88% 10%, rgba(167, 139, 250, 0.28), transparent 30%),
-    radial-gradient(circle at 16% 82%, rgba(253, 186, 116, 0.20), transparent 30%),
-    radial-gradient(circle at 90% 80%, rgba(45, 212, 191, 0.18), transparent 32%),
-    var(--color-bg-main);
+    radial-gradient(circle at 18% 8%, rgba(0, 87, 255, 0.46), transparent 28%),
+    radial-gradient(circle at 76% 12%, rgba(124, 58, 237, 0.36), transparent 31%),
+    radial-gradient(circle at 88% 72%, rgba(255, 122, 0, 0.22), transparent 30%),
+    radial-gradient(circle at 22% 86%, rgba(56, 189, 248, 0.18), transparent 32%),
+    linear-gradient(135deg, #030612 0%, #071331 46%, #020817 100%);
 }
 
 /* 2. Reset/base */
@@ -139,6 +145,17 @@ h4 {
   line-height: var(--line-snug);
   letter-spacing: 0;
   overflow-wrap: anywhere;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 0 28%, rgba(0, 87, 255, 0.12) 42%, transparent 58%),
+    repeating-linear-gradient(120deg, rgba(125, 211, 252, 0.04) 0 1px, transparent 1px 16px);
+  mask-image: radial-gradient(circle at 50% 30%, black, transparent 72%);
 }
 
 h1 {
@@ -385,14 +402,15 @@ label {
 .quick-actions .quick-primary {
   color: #ffffff;
   background: var(--gradient-brand);
-  box-shadow: 0 16px 34px rgba(124, 58, 237, 0.24);
+  box-shadow: 0 18px 42px rgba(0, 87, 255, 0.34), 0 0 28px rgba(124, 58, 237, 0.20);
 }
 
 .secondary-btn,
 .quick-actions button,
 .privacy,
 .profile-button {
-  background: rgba(255, 255, 255, 0.72);
+  color: var(--color-text-primary);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.045));
   border-color: var(--color-border-soft);
 }
 
@@ -411,7 +429,8 @@ label {
   width: 42px;
   min-width: 42px;
   padding: 0;
-  background: rgba(255, 255, 255, 0.70);
+  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.08);
   border-color: var(--color-border-soft);
 }
 
@@ -445,8 +464,8 @@ textarea {
   border-radius: 16px;
   padding: 0 var(--space-4);
   color: var(--color-text-primary);
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  background: rgba(6, 18, 44, 0.68);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 textarea {
@@ -488,7 +507,7 @@ textarea::placeholder {
   padding: 5px;
   border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .segmented.three {
@@ -526,12 +545,15 @@ textarea::placeholder {
 .emergency-panel,
 .topbar,
 .two-column > aside {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62));
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.045)),
+    radial-gradient(circle at top left, rgba(0, 87, 255, 0.12), transparent 38%),
+    var(--color-surface-glass);
   border: 1px solid var(--color-border-glass);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-card);
-  backdrop-filter: blur(28px) saturate(165%);
-  -webkit-backdrop-filter: blur(28px) saturate(165%);
+  backdrop-filter: blur(30px) saturate(175%);
+  -webkit-backdrop-filter: blur(30px) saturate(175%);
 }
 
 .panel,
@@ -561,7 +583,7 @@ textarea::placeholder {
   padding: var(--space-4);
   border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.64);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.035));
 }
 
 .card-grid {
@@ -597,7 +619,9 @@ textarea::placeholder {
   gap: var(--space-6);
   padding: var(--space-6) var(--space-5);
   border-right: 1px solid var(--color-border-glass);
-  background: rgba(255, 255, 255, 0.68);
+  background:
+    radial-gradient(circle at 60% 0%, rgba(0, 87, 255, 0.24), transparent 36%),
+    rgba(4, 13, 34, 0.74);
   backdrop-filter: blur(28px) saturate(165%);
   -webkit-backdrop-filter: blur(28px) saturate(165%);
 }
@@ -651,12 +675,12 @@ textarea::placeholder {
 
 .sidebar button:hover,
 .sidebar button.active {
-  color: var(--color-text-heading);
-  background: rgba(255, 255, 255, 0.78);
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(0, 87, 255, 0.28), rgba(124, 58, 237, 0.18));
 }
 
 .sidebar button.active {
-  box-shadow: inset 4px 0 0 var(--color-orange), var(--shadow-soft);
+  box-shadow: inset 4px 0 0 var(--color-blue), 0 14px 30px rgba(0, 87, 255, 0.18);
 }
 
 .bottom-nav {
@@ -870,7 +894,9 @@ textarea::placeholder {
   padding: var(--space-5);
   border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.70);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.04)),
+    rgba(6, 18, 44, 0.58);
 }
 
 .financial-status span,
@@ -904,10 +930,26 @@ textarea::placeholder {
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-elevated);
   background:
-    radial-gradient(circle at 12% 14%, rgba(56, 189, 248, 0.30), transparent 32%),
-    radial-gradient(circle at 82% 20%, rgba(167, 139, 250, 0.24), transparent 34%),
-    radial-gradient(circle at 88% 84%, rgba(255, 122, 0, 0.14), transparent 30%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.70));
+    radial-gradient(circle at 16% 20%, rgba(0, 87, 255, 0.40), transparent 34%),
+    radial-gradient(circle at 68% 18%, rgba(124, 58, 237, 0.28), transparent 32%),
+    radial-gradient(circle at 92% 82%, rgba(255, 122, 0, 0.20), transparent 34%),
+    linear-gradient(145deg, rgba(17, 35, 78, 0.90), rgba(5, 16, 40, 0.72));
+  border-color: rgba(156, 190, 255, 0.18);
+}
+
+.balance-card::after,
+.dashboard-header::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent 34%, rgba(56, 189, 248, 0.08));
+  mask: linear-gradient(#ffffff, transparent 52%);
+}
+
+.balance-card {
+  position: relative;
 }
 
 .balance-details {
@@ -946,7 +988,7 @@ textarea::placeholder {
 .initial-dashboard-note {
   align-items: center;
   border-color: rgba(56, 189, 248, 0.30);
-  background: linear-gradient(135deg, rgba(238, 248, 255, 0.90), rgba(245, 240, 255, 0.82));
+  background: linear-gradient(135deg, rgba(0, 87, 255, 0.18), rgba(124, 58, 237, 0.12));
 }
 
 .setup-progress-card {
@@ -981,6 +1023,9 @@ textarea::placeholder {
   align-content: space-between;
   gap: var(--space-4);
   padding: var(--space-5);
+  background:
+    radial-gradient(circle at 80% 12%, rgba(0, 87, 255, 0.18), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.115), rgba(255, 255, 255, 0.04));
 }
 
 .kpi-top {
@@ -999,8 +1044,9 @@ textarea::placeholder {
   display: grid;
   place-items: center;
   border-radius: var(--radius-md);
-  color: var(--color-blue);
-  background: var(--color-bg-blue);
+  color: #ffffff;
+  background: var(--gradient-blue);
+  box-shadow: 0 10px 28px rgba(0, 87, 255, 0.28);
 }
 
 .quick-actions {
@@ -1009,6 +1055,9 @@ textarea::placeholder {
   gap: var(--space-3);
   align-items: center;
   padding: var(--space-4);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)),
+    rgba(5, 16, 40, 0.56);
 }
 
 .quick-actions .section-title {
@@ -1099,7 +1148,7 @@ textarea::placeholder {
   min-height: 52px;
   border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.075);
 }
 
 .toolbar input {
@@ -1124,7 +1173,7 @@ textarea::placeholder {
   padding: 8px 12px;
   border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.66);
+  background: rgba(255, 255, 255, 0.07);
   color: var(--color-text-secondary);
   font-size: var(--font-size-sm);
   font-weight: var(--weight-semibold);
@@ -1150,7 +1199,7 @@ textarea::placeholder {
 }
 
 .finance-table tbody tr {
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.075);
   box-shadow: var(--shadow-soft);
 }
 
@@ -1185,7 +1234,7 @@ textarea::placeholder {
   padding: var(--space-4);
   border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.075);
   box-shadow: var(--shadow-soft);
 }
 
@@ -1224,7 +1273,7 @@ textarea::placeholder {
   justify-self: end;
   border-radius: 50%;
   background:
-    radial-gradient(circle at center, rgba(255, 255, 255, 0.92) 56%, transparent 58%),
+    radial-gradient(circle at center, rgba(6, 18, 44, 0.92) 56%, transparent 58%),
     conic-gradient(var(--color-orange) 0 var(--progress, 58%), rgba(100, 116, 139, 0.16) var(--progress, 58%) 100%);
 }
 
@@ -1242,9 +1291,9 @@ textarea::placeholder {
   align-items: center;
   padding: var(--space-6);
   background:
-    radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.24), transparent 34%),
-    radial-gradient(circle at 90% 76%, rgba(255, 122, 0, 0.14), transparent 34%),
-    rgba(255, 255, 255, 0.72);
+    radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.26), transparent 34%),
+    radial-gradient(circle at 90% 76%, rgba(255, 122, 0, 0.18), transparent 34%),
+    rgba(6, 18, 44, 0.64);
 }
 
 .budget-row {
@@ -1291,7 +1340,7 @@ textarea::placeholder {
   gap: var(--space-4);
   border: 1px solid var(--color-border-glass);
   border-radius: var(--radius-2xl);
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(6, 18, 44, 0.60);
   box-shadow: var(--shadow-card);
 }
 
@@ -1327,7 +1376,7 @@ textarea::placeholder {
 .status-pill.neutral,
 .status-pill.info,
 .status-chip.info {
-  color: #075985;
+  color: #7dd3fc;
   background: rgba(56, 189, 248, 0.14);
   border: 1px solid rgba(56, 189, 248, 0.26);
 }
@@ -1384,7 +1433,7 @@ textarea::placeholder {
     padding-bottom: 120px;
   }
 
-  .bottom-nav {
+.bottom-nav {
     position: fixed;
     left: 12px;
     right: 12px;
@@ -1395,7 +1444,9 @@ textarea::placeholder {
     padding: 8px;
     border: 1px solid var(--color-border-glass);
     border-radius: var(--radius-2xl);
-    background: rgba(255, 255, 255, 0.78);
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05)),
+      rgba(5, 16, 40, 0.82);
     box-shadow: var(--shadow-card);
     backdrop-filter: blur(28px) saturate(165%);
     -webkit-backdrop-filter: blur(28px) saturate(165%);
