@@ -430,7 +430,7 @@ export const Onboarding = ({ onStart }: { onStart?: (mode: AppMode) => void }) =
           )}
 
           <div className="wizard-actions">
-            <button disabled={index === 0} onClick={previous} type="button">
+            <button className="secondary-btn" disabled={index === 0} onClick={previous} type="button">
               <ArrowLeft size={17} />
               Atrás
             </button>

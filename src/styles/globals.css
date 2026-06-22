@@ -912,10 +912,18 @@ textarea::placeholder {
 .wizard-summary div,
 .wizard-total {
   padding: var(--space-5);
-  border: 1px solid var(--color-border-soft);
+  border: 1px solid rgba(154, 183, 255, 0.22);
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.68);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0.045)),
+    radial-gradient(circle at 16% 8%, rgba(125, 211, 252, 0.20), transparent 34%),
+    rgba(9, 23, 56, 0.72);
   color: var(--color-text-primary);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 16px 34px rgba(1, 7, 23, 0.24);
+  backdrop-filter: blur(24px) saturate(155%);
+  -webkit-backdrop-filter: blur(24px) saturate(155%);
 }
 
 .wizard-choice-grid button {
@@ -926,10 +934,29 @@ textarea::placeholder {
   text-align: left;
 }
 
+.wizard-choice-grid button svg,
+.wizard-focus > svg,
+.wizard-summary svg {
+  color: var(--color-brand-sky);
+}
+
+.wizard-choice-grid button span,
+.wizard-focus p,
+.wizard-summary span,
+.wizard-summary p,
+.wizard-total span {
+  color: var(--color-text-secondary);
+}
+
 .wizard-choice-grid button.selected {
-  border-color: rgba(124, 58, 237, 0.38);
-  background: linear-gradient(145deg, rgba(238, 248, 255, 0.92), rgba(245, 240, 255, 0.88));
-  box-shadow: var(--shadow-soft);
+  border-color: rgba(125, 211, 252, 0.42);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.24), transparent 30%),
+    linear-gradient(135deg, rgba(0, 87, 255, 0.42), rgba(124, 58, 237, 0.36), rgba(255, 122, 0, 0.24)),
+    rgba(8, 22, 58, 0.82);
+  box-shadow:
+    0 18px 44px rgba(0, 87, 255, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.26);
 }
 
 .wizard-focus,
@@ -971,8 +998,18 @@ textarea::placeholder {
 .wizard-actions {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
   gap: var(--space-3);
   margin-top: var(--space-6);
+}
+
+.wizard-actions > button {
+  min-width: 150px;
+}
+
+.wizard-actions .primary-btn {
+  min-width: 190px;
 }
 
 /* 10. Dashboard */
@@ -1458,8 +1495,22 @@ textarea::placeholder {
 }
 
 .budget-row {
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.8fr) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 0.72fr) minmax(120px, auto);
   align-items: center;
+}
+
+.budget-row > div:first-child {
+  display: grid;
+  gap: 4px;
+}
+
+.budget-row > div:first-child span {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.budget-row .progress-row {
+  min-width: 0;
 }
 
 .budget-row.over {
@@ -1499,6 +1550,23 @@ textarea::placeholder {
 .backup-status,
 .button-grid {
   flex-wrap: wrap;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: stretch;
+}
+
+.button-grid button {
+  width: 100%;
+  min-width: 0;
+  white-space: normal;
+  text-align: center;
+}
+
+.backup-status {
+  align-items: flex-start;
 }
 
 .danger-panel {
