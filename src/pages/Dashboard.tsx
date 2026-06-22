@@ -39,12 +39,24 @@ export const Dashboard = ({
 }) => {
   const { togglePrivacy, resetDemo, switchMode, hideSetupProgress } = useFinance();
   const active = activeData(data);
-  const totals = totalsForPeriod(active.transactions, currentMonthPeriod());
+  const rawTotals = totalsForPeriod(active.transactions, currentMonthPeriod());
   const previousTotals = totalsForPeriod(active.transactions, previousMonthPeriod());
   const alerts = buildAlerts(data);
   const categories = groupExpensesByCategory(active.transactions);
   const payments = upcomingPayments(active.products);
   const cards = cardUsage(active.products, active.cardConsumptions);
+  const estimatedIncome = data.settings.estimatedMonthlyIncome || 0;
+  const estimatedFixed = rawTotals.fixed || active.products.reduce((total, product) => total + (product.monthlyPayment || 0), 0);
+  const totals = {
+    ...rawTotals,
+    income: rawTotals.income || estimatedIncome,
+    expenses: rawTotals.expenses || estimatedFixed,
+    fixed: rawTotals.fixed || estimatedFixed,
+    balance: (rawTotals.income || estimatedIncome) - (rawTotals.expenses || estimatedFixed),
+    savingsRate: (rawTotals.income || estimatedIncome)
+      ? (((rawTotals.income || estimatedIncome) - (rawTotals.expenses || estimatedFixed)) / (rawTotals.income || estimatedIncome)) * 100
+      : 0
+  };
   const health = financialHealth(totals.income, totals.expenses);
   const emergency = emergencyFundStatus(active.emergencyFund, totals.fixed);
   const privacy = data.settings.privacyMode;
@@ -55,7 +67,8 @@ export const Dashboard = ({
     active.mode === 'real' &&
     !active.transactions.length &&
     !active.products.length &&
-    !active.savingsGoals.length;
+    !active.savingsGoals.length &&
+    !data.settings.estimatedMonthlyIncome;
   const setupSignals = [
     Boolean(data.settings.userName),
     Boolean(data.settings.estimatedMonthlyIncome || totals.income),
@@ -84,6 +97,7 @@ export const Dashboard = ({
         onTogglePrivacy={togglePrivacy}
         onOpenSettings={() => onNavigate('settings')}
         privacyMode={privacy}
+        greeting={data.settings.dashboardGreeting}
         userName={data.settings.userName}
       />
 
@@ -120,12 +134,18 @@ export const Dashboard = ({
             privacyMode={privacy}
             savings={totalSavings + active.emergencyFund.currentAmount}
           />
+          {active.mode === 'real' && !active.transactions.length && (
+            <article className="initial-dashboard-note">
+              <strong>Tu dashboard inicial</strong>
+              <span>Basado en tus ingresos estimados, gastos fijos y productos financieros configurados.</span>
+            </article>
+          )}
           {showSetupProgress && (
             <article className="setup-progress-card">
               <div>
                 <span className="eyebrow">Configuración</span>
-                <h2>Termina de configurar Manéjate</h2>
-                <p>Completa tus datos para recibir análisis más útiles.</p>
+                <h2>Completa tu perfil financiero</h2>
+                <p>Te faltan algunos datos para que Manéjate pueda darte alertas y recomendaciones más precisas.</p>
               </div>
               <div className="setup-meter">
                 <strong>{setupCompleted} de {setupSignals.length} pasos completados</strong>

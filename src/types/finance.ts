@@ -137,6 +137,7 @@ export interface OnboardingState {
 
 export interface AppSettings extends BaseEntity {
   userName?: string;
+  dashboardGreeting?: string;
   currency: string;
   country?: string;
   financialMonthStart: number;

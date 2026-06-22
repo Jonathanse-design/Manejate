@@ -39,7 +39,8 @@ export const defaultCategories = (mode: AppMode): Category[] =>
 export const createSettings = (): AppSettings => ({
   id: 'settings',
   mode: 'real',
-  userName: 'Jonathan',
+  userName: undefined,
+  dashboardGreeting: 'Tu dinero, bajo control.',
   currency: 'RD$',
   country: 'República Dominicana',
   financialMonthStart: 1,

@@ -16,6 +16,7 @@ export const Settings = () => {
   const {
     data,
     switchMode,
+    updateSettings,
     markBackupCreated,
     importData,
     resetDemo,
@@ -23,6 +24,11 @@ export const Settings = () => {
   } = useFinance();
   const [confirmText, setConfirmText] = useState('');
   const [importMessage, setImportMessage] = useState('');
+  const [profileMessage, setProfileMessage] = useState('');
+  const [displayName, setDisplayName] = useState(data?.settings.userName || '');
+  const [greeting, setGreeting] = useState(data?.settings.dashboardGreeting || 'Tu dinero, bajo control.');
+  const [country, setCountry] = useState(data?.settings.country || 'República Dominicana');
+  const [currency, setCurrency] = useState(data?.settings.currency || 'RD$');
   const inputRef = useRef<HTMLInputElement>(null);
   if (!data) return null;
 
@@ -52,10 +58,84 @@ export const Settings = () => {
     setConfirmText('');
   };
 
+  const saveProfile = () => {
+    updateSettings({
+      userName: displayName.trim() || undefined,
+      dashboardGreeting: greeting.trim() || 'Tu dinero, bajo control.',
+      country: country.trim() || undefined,
+      currency
+    });
+    setProfileMessage('Perfil actualizado.');
+  };
+
   const backupAlerts = buildAlerts(data).filter((alert) => alert.title.toLowerCase().includes('respaldo'));
 
   return (
     <div className="settings-grid">
+      <section className="panel wide profile-settings-panel">
+        <div className="section-title">
+          <div>
+            <p className="eyebrow">Personalización</p>
+            <h2>Perfil visible</h2>
+          </div>
+          <span className="status-pill info">Editable</span>
+        </div>
+        <p className="muted">Estos datos controlan el saludo del dashboard y la moneda que ves en tus módulos.</p>
+        <div className="settings-form-grid">
+          <label>
+            Nombre visible
+            <input
+              onChange={(event) => {
+                setDisplayName(event.target.value);
+                setProfileMessage('');
+              }}
+              placeholder="Ej. María"
+              value={displayName}
+            />
+          </label>
+          <label>
+            Saludo del dashboard
+            <input
+              onChange={(event) => {
+                setGreeting(event.target.value);
+                setProfileMessage('');
+              }}
+              placeholder="Tu dinero, bajo control."
+              value={greeting}
+            />
+          </label>
+          <label>
+            País
+            <input
+              onChange={(event) => {
+                setCountry(event.target.value);
+                setProfileMessage('');
+              }}
+              value={country}
+            />
+          </label>
+          <label>
+            Moneda
+            <select
+              onChange={(event) => {
+                setCurrency(event.target.value);
+                setProfileMessage('');
+              }}
+              value={currency}
+            >
+              <option>RD$</option>
+              <option>US$</option>
+              <option>€</option>
+              <option>$</option>
+            </select>
+          </label>
+        </div>
+        <div className="card-actions">
+          <button className="primary-btn" onClick={saveProfile} type="button">Guardar perfil</button>
+          {profileMessage && <span className="status-pill success">{profileMessage}</span>}
+        </div>
+      </section>
+
       <section className="panel wide">
         <div className="section-title">
           <h2>Respaldo y seguridad de datos</h2>

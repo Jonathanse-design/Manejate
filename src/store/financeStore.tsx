@@ -32,7 +32,7 @@ export type OnboardingFlowPayload = {
   financialMonthStartDay: number;
   estimatedMonthlyIncome?: number;
   fixedExpenses?: { name: string; amount: number }[];
-  bankProduct?: {
+  bankProducts?: {
     type: BankProduct['type'];
     name: string;
     bank: string;
@@ -40,7 +40,16 @@ export type OnboardingFlowPayload = {
     creditLimit?: number;
     paymentDueDay?: number;
     cutDay?: number;
-  };
+    statementClosingDate?: string;
+    paymentDueDate?: string;
+    minimumPayment?: number;
+    estimatedFullPayment?: number;
+    originalAmount?: number;
+    monthlyPayment?: number;
+    totalInstallments?: number;
+    paidInstallments?: number;
+    nextPaymentDate?: string;
+  }[];
   savingsGoal?: {
     name: string;
     targetAmount: number;
@@ -199,24 +208,38 @@ export const FinanceProvider = ({ children }: { children: ReactNode }) => {
                   ...current.transactions
                 ]
               : current.transactions;
+          const onboardingProducts = (payload.bankProducts || []).filter((product) => product.name?.trim());
           const nextProducts =
-            mode === 'real' && payload.bankProduct?.name
+            mode === 'real' && onboardingProducts.length
               ? [
-                  {
+                  ...onboardingProducts.map((product) => ({
                     id: createId('product'),
                     mode,
-                    type: payload.bankProduct.type,
-                    name: payload.bankProduct.name,
-                    bank: payload.bankProduct.bank || 'Banco',
-                    balance: payload.bankProduct.balance || 0,
+                    type: product.type,
+                    name: product.name,
+                    bank: product.bank || 'Banco',
+                    balance: product.balance || 0,
                     currency: payload.currency,
-                    color: payload.bankProduct.type === 'credit-card' ? '#8B5CF6' : '#2DD4BF',
-                    creditLimit: payload.bankProduct.creditLimit,
-                    cutDay: payload.bankProduct.cutDay,
-                    paymentDueDay: payload.bankProduct.paymentDueDay,
+                    color: product.type === 'credit-card' ? '#7C3AED' : product.type === 'loan' ? '#38BDF8' : '#2DD4BF',
+                    status: 'current' as const,
+                    creditLimit: product.creditLimit,
+                    cutDay: product.cutDay,
+                    paymentDueDay: product.paymentDueDay,
+                    statementClosingDate: product.statementClosingDate,
+                    paymentDueDate: product.paymentDueDate,
+                    minimumPayment: product.minimumPayment,
+                    estimatedPayment: product.estimatedFullPayment,
+                    estimatedFullPayment: product.estimatedFullPayment,
+                    originalAmount: product.originalAmount,
+                    monthlyPayment: product.monthlyPayment,
+                    totalInstallments: product.totalInstallments,
+                    paidInstallments: product.paidInstallments,
+                    termMonths: product.totalInstallments,
+                    nextPaymentDate: product.nextPaymentDate,
+                    paymentDay: product.nextPaymentDate ? Number(product.nextPaymentDate.slice(-2)) : undefined,
                     createdAt: now,
                     updatedAt: now
-                  },
+                  })),
                   ...current.products
                 ]
               : current.products;
@@ -258,7 +281,7 @@ export const FinanceProvider = ({ children }: { children: ReactNode }) => {
             ...current,
             settings: {
               ...current.settings,
-              userName: payload.userName?.trim() || current.settings.userName || 'Jonathan',
+              userName: payload.userName?.trim() || current.settings.userName,
               currency: payload.currency,
               country: payload.country?.trim() || current.settings.country,
               financialMonthStart: payload.financialMonthStartDay,

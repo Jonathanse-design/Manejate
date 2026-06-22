@@ -12,6 +12,7 @@ const statusCopy: Record<FinancialHealth, string> = {
 
 export const DashboardHeader = ({
   userName,
+  greeting,
   mode,
   health,
   privacyMode,
@@ -19,6 +20,7 @@ export const DashboardHeader = ({
   onOpenSettings
 }: {
   userName?: string;
+  greeting?: string;
   mode: AppMode;
   health: FinancialHealth;
   privacyMode: boolean;
@@ -27,14 +29,14 @@ export const DashboardHeader = ({
 }) => (
   <header className="dashboard-header">
     <div className="dashboard-brand-row">
-      <img className="brand-logo" src="./assets/logo-manejate-light.svg" alt="Manéjate" />
+      <img className="brand-logo" src="./assets/logo-manejate-dark.svg" alt="Manéjate" />
       <span className={`mode-pill ${mode}`}>{mode === 'demo' ? 'Modo Demo' : 'Modo Real'}</span>
     </div>
     <div className="dashboard-welcome">
       <div>
         <p className="eyebrow">{format(new Date(), "d 'de' MMMM, yyyy", { locale: es })}</p>
-        <h1>Hola{userName ? `, ${userName}` : ''}</h1>
-        <p>Tu dinero, bajo control.</p>
+        <h1>{userName ? `Hola, ${userName}` : 'Hola'}</h1>
+        <p>{userName ? 'Así va tu dinero este mes.' : greeting?.trim() || 'Personaliza Manéjate para entender mejor tu dinero.'}</p>
       </div>
       <div className={`financial-status ${health}`}>
         <span>Estado: {health === 'healthy' ? 'Saludable' : health === 'tight' ? 'Ajustado' : 'Crítico'}</span>
