@@ -38,7 +38,10 @@ export const AppShell = ({ page, onPageChange, mode, privacyMode, onTogglePrivac
   <div className="app-shell">
     <aside className="sidebar">
       <div className="brand-block">
-        <img className="brand-logo" src="./assets/logo-manejate-light.svg" alt="Manéjate" />
+        <div className="brand-mark" aria-label="Manéjate">
+          <span className="brand-symbol-glass"><img src="./assets/logo-manejate-icon.svg" alt="" /></span>
+          <strong>Manéjate</strong>
+        </div>
         <span>Finanzas personales</span>
       </div>
       <nav>

@@ -28,7 +28,7 @@ import { buildAlerts } from '../utils/alerts';
 import { currentMonthPeriod } from '../utils/dates';
 import { formatMoney, formatPercent } from '../utils/formatters';
 
-const colors = ['#38BDF8', '#8B5CF6', '#22C55E', '#F59E0B', '#EF4444', '#14B8A6'];
+const colors = ['#0057FF', '#7B2CFF', '#FF7A00', '#38BDF8', '#20E48A', '#FF5F7D'];
 const tooltipStyle = {
   background: 'rgba(6, 18, 44, 0.92)',
   border: '1px solid rgba(154, 183, 255, 0.22)',
@@ -61,12 +61,22 @@ export const Analytics = ({ data }: { data: AppData }) => {
         <div className="chart-box">
           <ResponsiveContainer width="100%" height={260}>
             <AreaChart data={trend}>
+              <defs>
+                <linearGradient id="incomeGlass" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stopColor="#38BDF8" stopOpacity={0.88} />
+                  <stop offset="100%" stopColor="#20E48A" stopOpacity={0.28} />
+                </linearGradient>
+                <linearGradient id="expenseGlass" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stopColor="#FF7A00" stopOpacity={0.82} />
+                  <stop offset="100%" stopColor="#7B2CFF" stopOpacity={0.26} />
+                </linearGradient>
+              </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#23304A" />
               <XAxis dataKey="month" stroke="#94A3B8" />
               <YAxis stroke="#94A3B8" />
               <Tooltip contentStyle={tooltipStyle} />
-              <Area dataKey="ingresos" stroke="#22C55E" fill="#22C55E33" />
-              <Area dataKey="gastos" stroke="#EF4444" fill="#EF444433" />
+              <Area dataKey="ingresos" stroke="#38BDF8" strokeWidth={3} fill="url(#incomeGlass)" />
+              <Area dataKey="gastos" stroke="#FF7A00" strokeWidth={3} fill="url(#expenseGlass)" />
             </AreaChart>
           </ResponsiveContainer>
         </div>
@@ -91,10 +101,17 @@ export const Analytics = ({ data }: { data: AppData }) => {
         <div className="chart-box small">
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={typeData}>
+              <defs>
+                <linearGradient id="barGlass" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stopColor="#38BDF8" />
+                  <stop offset="50%" stopColor="#7B2CFF" />
+                  <stop offset="100%" stopColor="#FF7A00" />
+                </linearGradient>
+              </defs>
               <XAxis dataKey="name" stroke="#94A3B8" />
               <YAxis stroke="#94A3B8" />
               <Tooltip contentStyle={tooltipStyle} />
-              <Bar dataKey="value" fill="#38BDF8" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="value" fill="url(#barGlass)" radius={[14, 14, 4, 4]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
